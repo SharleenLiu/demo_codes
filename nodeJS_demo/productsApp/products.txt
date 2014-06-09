@@ -1,0 +1,26 @@
+{
+	"Success":true,
+	"NumberOfResults":10,
+	"ProductResults":[
+		{
+			"Id":12001.
+			"Name":"Shirt 1",
+			"YearProduced":0,
+			"Price":50.95,
+			"ImageUrl":"",
+			"Sources:[
+
+			]
+		},
+		{
+			"Id":12002.
+			"Name":"Shirt 2",
+			"YearProduced":0,
+			"Price":90.95,
+			"ImageUrl":"",
+			"Sources:[
+
+			]
+		}
+	]
+}

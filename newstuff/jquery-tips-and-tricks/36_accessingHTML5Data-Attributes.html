@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accessing HTML5 data-* Attributes</title>
+    
+</head>
+<body>
+    <h1>Accessing HTML5 data-* Attributes</h1>
+    <div id="pet"
+        data-type="dog"
+        data-name="Baron"
+        data-age="2"
+        data-trained="true"
+        data-object='{"type":"dog", "name":"Baron", "age":2, "trained":true}'>
+        Baron the Dog
+    </div>
+    <h2>attr() Output</h2>
+    <div id="attrOutput"></div>
+    <br />
+    <h2>data() Output</h2>
+    <div id="dataOutput"></div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script>
+        var $pet = $("#pet");
+        var $attrOutput = $("#attrOutput");
+        var $dataOutput = $("#dataOutput");
+
+        var attrName = $pet.attr("data-name"); //attribute always return string
+        var dataName = $pet.data("name");
+
+        var attrAge = $pet.attr("data-age");
+        var dataAge = $pet.data("age");
+
+        var attrAgePlus1 = attrAge + 1; // return '21'
+        var dataAgePlus1 = dataAge + 1; // return 3
+
+        var attrTrained = $pet.attr("data-trained");
+        var dataTrained = $pet.data("trained");
+
+        var attrObject = $pet.attr("data-object");
+        var dataObject = $pet.data("object");
+
+        $pet.attr("data-name", "Fido");
+        //alert("data() name: " + $pet.data("name") + " attr() name: " + $pet.attr("data-name"));
+        //attrName = $pet.attr("data-name");
+
+        //The jQuery data object and an HTML5 data-* attribute aren't connected.
+        //Updating the jQuery data object won't update the custom attrbute because data() just cached, attr always modify DOM element
+
+        $attrOutput.html("Name: " + attrName + "<br >Age: " + attrAge + " = " + typeof (attrName) +
+                        "<br >Age + 1: " + attrAgePlus1 + " = " + typeof (attrAgePlus1) +
+                        "<br >Trained: " + attrTrained + " = " + typeof (attrTrained) +
+                        "<br >Full Object: " + attrObject + " = " + typeof (attrObject)
+                        );
+
+        $dataOutput.html("Name: " + dataName + "<br >Age: " + dataAge + " = " + typeof (dataAge) +
+                        "<br >Age + 1: " + dataAgePlus1 + " = " + typeof (dataAgePlus1) +
+                        "<br >Trained: " + dataTrained + " = " + typeof (dataTrained) +
+                        "<br >Full Object: " + dataObject + " = " + typeof (dataObject)
+                        );
+
+    </script> 
+</body>
+</html>

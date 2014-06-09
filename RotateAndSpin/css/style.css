@@ -1,0 +1,66 @@
+
+    
+/*
+ 
+ $example
+ 
+*/
+
+
+#example {
+    height:auto;
+    width:850px;
+}
+
+   
+        
+        
+    #wheels {
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+    
+    
+            
+        
+        #noise-wheel {
+            width:242px;
+            height:242px;
+            float:left;
+            position:relative;
+            margin:5px 44px 0 0;
+            background-image:url(../img/metal_button.png);
+             cursor: pointer;
+        }
+        
+            #noise-wheel .indicator-cw {
+                width: 182px;
+                height: 182px;
+                position: absolute;
+               
+                z-index:9999;
+                /*background:rgba(0,0,0,0.0);*/
+                background:white;
+                opacity:0;
+                filter: alpha(opacity=00);
+                
+            }
+            
+            #noise-wheel .indicator-cw1 {
+                width: 182px;
+                height: 182px;
+                position: absolute;
+               
+                top:28px;
+                left:28px;
+                z-index:99;
+                
+            }
+            
+            #noise-wheel .result-cw {
+                display:block;
+            }
+            
+        
+        

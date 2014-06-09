@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using the $.extend Method</title>
+    <meta charset=utf-8 />   
+    <style></style>   
+</head>
+<body>  
+    <a href="http://www.yahoo.com">Yahoo</a>
+    <a href="http://www.google.com">Google</a>
+
+    <script src="js/jquery-2.0.0.min.js"></script>       
+    <script>
+        //make jQuery plugin - valentines
+        $.fn.valentines = function (options) {
+            //$.extend(object1, object2) merge 2 or more object to one, useful to make jQuery plugin
+            //var settings = $.extend($.fn.valentines.defaults, options); //overridered the first argument which is default setting
+            var settings = $.extend({}, $.fn.valentines.defaults, options); // <=== good
+            return this.css(settings);
+        };
+        $.fn.valentines.defaults = { color: "red", fontSize: "16px" };
+
+        $("a").valentines({ color: "#A00000" });
+        $("a:last").valentines();         
+        
+        //note if you use underscore.js which has their own extend method             
+    </script>
+</body>
+</html>

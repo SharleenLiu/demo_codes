@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using callbacks object</title>
+    <meta charset=utf-8 />   
+       
+</head>
+<body>  
+    <div></div>  
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script>
+        function emergency(value) {
+            if (value === "police") {
+                console.log("call the police!!!");
+                return false;
+            }
+            console.log("emergency: " + value);
+        }
+
+        function firemen(value) {
+            console.log("firemen: " + value);
+        }
+
+        var callbacks = $.Callbacks("unique stopOnFalse memory"); //pass few flags
+        callbacks.add(emergency);
+        callbacks.fire("false alarm");      //immadiately invoke
+        callbacks.add(emergency);           //rejected since unique
+        callbacks.add(firemen);             //immadiately invoke with "false alarm" since memory flag
+        callbacks.fire("smoke in house");   //immadiately invoke both emergency("smoke in house") and firemen("smoke in house")  
+        callbacks.fire("police");           //immadiately invoke both emergency("police") which returned false, firemen("police") never be fired since stopOnFalse flag
+        callbacks.remove(firemen);
+        callbacks.fire("cat in tree");      //only fire emergency("cat in tree") since firemen has been removed
+    </script>     
+</body>
+</html>

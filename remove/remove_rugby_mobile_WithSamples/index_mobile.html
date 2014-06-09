@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/jquery.mobile-1.2.0.css" rel="stylesheet" />
+    <link href="Content/jquery.mobile.structure-1.2.0.css" rel="stylesheet" />
+    <link href="Content/jquery.mobile.theme-1.2.0.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    <style type="text/css">
+        .ui-page { background: #CCCCCC; } /* Set background color of a page */
+    </style> 
+
+    <script src="remove_js/vendor/modernizr-2.6.2.min.js"></script>    
+    
+</head>
+<body>
+<!--http://eisabainyo.net/weblog/2011/01/31/top-10-jquery-mobile-code-snippets-that-you-need-to-know/-->
+<!--But media queries only really work well when you're dealing with a responsive site design, not a site with a custom mobile template.-->
+    <div data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Home Page</h1>           
+        </div>
+        <div><br /></div>
+        <div>
+            <a href="index_mobile.html" data-icon="grid" class="ui-btn-right" data-iconpos="notext">Create an image-only button with no text</a>
+        </div>
+        <div><br /></div>
+        <div>
+            <a href="index_mobile.html" data-icon="grid" class="ui-btn-right" rel="external">Open a link without using AJAX with page transitions</a>
+        </div>
+        <div data-role="content"> 
+            <ul data-role="listview" data-inset="true" data-filter="true" data-theme="b">
+                <li data-role="list-divider">Navigation</li>
+                <li><a href="http://www.ralphlauren.com">Ralph Lauren</a></li>
+                <li><a href="http://www.ralphlaurenhome.com">Ralph Lauren Home</a></li>
+                <li data-icon="false"><a href="http://www.ralphlaurenwatches.com">RL Watches (Remove an arrow from a list item)</a></li>
+            </ul>
+        </div>
+        <div id="wrapper">
+            <div id="imgcontent">  
+                <img src="Content/graphics/rugbyremove1.jpg" alt="" />
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>            window.jQuery || document.write('<script src="remove_js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+    <script src="remove_js/plugins.js"></script> 
+    <script src="remove_js/vendor/css3-mediaqueries.js"></script> <!-- media queries support for IE8 IE7 -->       
+    <script src="remove_js/vendor/jquery.rwdImageMaps.min.js"></script> <!-- media queries image mapping -->       
+
+   
+    <script src="Scripts/jquery.mobile-1.2.0.js"></script>
+   
+
+    <script>
+        $(document).ready(function () {
+            $width = $('#imgcontent').width();
+            $('#imgcontent img').css({
+                'max-width': $width, 'height': 'auto'
+            });
+        });
+    </script> 
+
+    
+</body>
+</html>

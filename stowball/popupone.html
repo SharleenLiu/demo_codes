@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Responsive Image Maps jQuery Plugin</title>
+   
+	<style>
+	body {
+		font-family: Helvetica, Arial, sans-serif;
+	}
+	h1 {
+		font-size: 20px;
+	}
+	div {
+		width: 100%;
+	}
+	img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+	}
+
+    /* ---------- CYCLE ---------- */
+.cycle {
+    margin:0;
+    height: 547px; 
+    overflow: hidden;
+    padding:0;
+    width: 100%; 
+    }
+    
+.cycle .slide {
+    background-color: transparent !important;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 547px; 
+    width: 100% !important; 
+    position: absolute;
+    top:0; 
+    left:0;
+    }
+	
+.controls {
+	position: absolute;
+	top: 45%;
+	left: 0px;
+	width: 100%;
+	z-index: 10000;
+	}
+	
+.control {
+	cursor: pointer;
+	display: block;
+	}
+	
+.control.prev {
+	position: absolute;
+	top: 0px;
+	}
+	
+.control.next {
+	position: absolute;
+	top: 0px;
+	}	
+
+
+
+    .callout { position: relative;  }
+    #callout-shop {margin: 0;	width: 940px; }	
+
+   
+    #callout-shop #cycle-shop,
+    #callout-shop #cycle-shop .slide { width:940px; height: 547px; } 
+     
+    #callout-shop #cycle-shop .slide {
+	background-color: transparent;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+    }
+	
+    #callout-shop #cycle-shop .slide.nth-child-1 { background-image: url('images/01.jpg'); }
+    #callout-shop #cycle-shop .slide.nth-child-2 { background-image: url('images/02.jpg'); }
+    #callout-shop #cycle-shop .slide.nth-child-3 { background-image: url('images/03.jpg'); }
+    #callout-shop #cycle-shop .slide.nth-child-4 { background-image: url('images/04.jpg'); }
+
+    #callout-shop .controls {top: 210px;	}	
+    #callout-shop .control { height: 66px; width: 40px; }	
+    #callout-shop .control.prev { background: url('images/arrow_left.png') no-repeat;	left: 14px;	}	
+    #callout-shop .control.next { background: url('images/arrow_right.png') no-repeat;	right: 14px; }	
+	
+	</style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="jquery.cycle.all-3.0.2.js"></script>   
+    
+    <script>
+        $(document).ready(function (e) {
+           
+
+            jQuery('area').on('click', function () {
+                alert(jQuery(this).attr('alt') + ' clicked');
+            });
+
+            // cycle slider
+            jQuery('#cycle-shop').cycle({
+                fx: 'fade',
+                delay: -2000,
+                speed: 500,
+                timeout: 0,
+                next: '#next-item',
+                prev: '#prev-item',
+                nowrap: true,
+                //onPrevNextEvent: function (isNext, zeroBasedSlideIndex, slideElement) {
+                //    SOS_Omniture.trackClick(': Looks: ' + (zeroBasedSlideIndex + 1) + '');
+                //},
+                before: function (curr, next, opts) {
+                    jQuery(this).removeClass('activeSlide');
+                },
+                after: function (curr, next, opts) {
+                    jQuery(this).addClass('activeSlide');
+                    if (opts.currSlide == 0) { jQuery('#prev-item').hide(); jQuery('#callout-shop .copy').show(); } else { jQuery('#prev-item').show(); jQuery('#callout-shop .copy').hide(); }
+                    if (opts.nextSlide == 0) { jQuery('#next-item').hide(); } else { jQuery('#next-item').show(); }
+                }
+            });
+
+            jQuery('#cycle-shop').each(function () {
+                var countChildren = jQuery(this).children();
+                var count = countChildren.length;
+                countChildren.each(function (index) {
+                    jQuery(this).addClass('nth-child-' + (index + 1));
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <div class="callout" id="callout-shop">							  
+		<div class="controls">
+			<span class="control prev" id="prev-item"></span>
+			<span class="control next" id="next-item"></span>
+		</div>
+		<div class="cycle" id="cycle-shop">
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			
+		</div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿body{margin:0; padding:0; font-size: 11px; font-family: Arial, Verdana, Helvetica, Sans-Serif; }
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.bold { font-weight: bold; }
+img { border: 0;}
+       
+.themain{background:url("../Content/images/EPK-Watches-BG.jpg") no-repeat; width:864px; height:1294px; margin: 0 auto; position:relative; }
+.scrollerhere{ position:relative; top:300px; left:610px; color: #BDC0C1; line-height: 18px; text-align:right; width:250px; height:420px; }
+
+.links {position:relative; top:320px; left:570px; text-align:right; width: 250px; height:40px;  }
+.links .linkText, .linkText a, .linkText a:link, .linkText a:active, .linkText a:visited { color: #646464; text-transform: uppercase; font-weight: bold; text-decoration: none; cursor: pointer; height:20px; }
+.links .linkText a:hover { color: #887565; text-transform: uppercase; font-weight: bold; text-decoration: underline; }
+
+.downloads { width: 100%; padding: 20px 88px 30px 88px; text-align: left; }
+.downloadTile { padding: 0 10px 0 10px; width:151px; }
+.downloadTileText { font-family:Times New Roman, Arial; font-size:20px; color:#646464; text-align:center; }
+
+.downloadText { color: #646464; text-transform: uppercase; font-weight: bold; }
+.downloadTextRes, .downloadTextRes a, .downloadTextRes a:link, .downloadTextRes a:active, .downloadTextRes a:visited { color: #BBBBBB; text-decoration: none; cursor: pointer; }
+.downloadTextRes a:hover { text-decoration: underline; }
+
+
+.bottomNav { width: 860px; height: 34px; text-align: center; }
+
+#mediaModal { background-image: url('../Content/graphics/lightbox_watches_epk_main.jpg'); background-repeat: no-repeat; width: 860px; height: 640px; display: none; }
+.contactColumn { padding-right: 30px; }
+.contactTile { padding-bottom: 40px; padding-left: 35px; }
+.closeButton { text-align: right; padding-bottom: 150px; }
+
+.contactLink, .contactLink a, .contactLink a:link, .contactLink a:active, .contactLink a:visited { color: #AAAAAA; text-decoration: underline; cursor: pointer; }
+
+.contactColumn { padding-right: 30px; }
+.infoText { color: #BDC0C1; line-height: 18px; }
+

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>      
+    <link rel="stylesheet" href="/css/Site.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/jquery.jscrollpane.css" type="text/css"/>	
+    <script type="text/javascript" src="/Scripts/jquery-1.7.1.min.js" ></script>		
+	<script type="text/javascript" src="/Scripts/plugins/jquery.blockUI.js" ></script>
+	<script type="text/javascript" src="/Scripts/plugins/jquery.jscrollpane.min.js" ></script>	
+	<script type="text/javascript" src="/Scripts/sihh2011.js" ></script>
+    <script type="text/javascript" src="/Scripts/modernizr-1.7.min.js" ></script>
+</head>
+<body>
+    <div class="page">        
+        <section id="main">
+            @RenderBody()
+        </section>        
+    </div>
+    <div>
+        @Html.Action("Analytics")
+    </div>
+</body>
+</html>

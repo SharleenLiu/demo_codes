@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>pop up two - draggable slides</title>	
+    <link href="css/royalslider.css" rel="stylesheet" />   
+    <script src="js/modernizr-2.6.2.js"></script>
+	<style>
+	    body {font-family: Helvetica, Arial, sans-serif; margin:0; padding:0;}	        
+        #rl_carousel { width: 940px;height:547px; overflow: hidden; text-align: center;	position:relative; border:0px solid #00FF00;}
+	    #carousel_pop2 {width: 940px;height: 547px;	list-style-type: none; margin:0; padding:0; border:0px solid #AA0000;}		
+	    #carousel_pop2 li img {	width: 940px; height:547px; display: block; cursor:pointer; }        
+        #rl_carousel .rsArrow, #rl_carousel .control_slide { position: absolute; z-index: 2; top:250px; background:transparent; width:40px; height:66px; }	    
+        .rsArrowRight.rsArrow, .control_slide#sideR { right: 20px; }
+        .rsArrowLeft.rsArrow, .control_slide#sideL { left: 20px; } 
+               
+        #rl_carousel #pop-close {
+	    background: url('images/close.png') no-repeat;
+	    cursor: pointer;
+	    height: 32px; 
+	    width: 32px;
+	    position: absolute;
+	    top: 20px;
+	    right: 20px;
+        z-index:10;
+	    }             
+	</style>    
+</head>
+<body>
+    <div id="rl_carousel">	
+        <div id="pop-close"></div>						  
+		<div class="control_slide" id="sideL"><img src="images/arrow_left.png" /></div>
+		<div class="control_slide" id="sideR"><img src="images/arrow_right.png" /></div>
+		<ul id="carousel_pop2" class="royalSlider rsActiveSlide ">
+			<li class="slide">
+                <img src="images/01.jpg" />
+			</li>
+			<li class="slide">
+                <img src="images/02.jpg" />
+			</li>
+			<li class="slide">
+                <img src="images/03.jpg" />
+			</li>
+			<li class="slide">
+                <img src="images/04.jpg" />
+			</li>			
+		</ul>
+    </div> 
+    <script src="js/jquery-1.8.2.js"></script>  
+    <script src="js/jquery.royalslider.js"></script>
+    <script>
+        $(document).ready(function () {
+            initCarousel();
+
+            jQuery("#pop-close").click(function () {
+                parent.jQuery.fancybox.close();
+            });
+
+        });
+
+        function initCarousel() {
+            //var slider = jQuery("#carousel_pop2").royalSlider({
+                jQuery("#carousel_pop2").royalSlider({
+                imageScaleMode: "none",
+                autoScaleSlider: true,
+                keyboardNavEnabled: false,
+                transitionSpeed: 1000,
+                //addActiveClass:true,
+                loop: true,
+                slidesSpacing: 0,
+                autoScaleSliderWidth: 940,
+                autoScaleSliderHeight: 547,
+                imageScalePadding: 0,
+                imgWidth: 940,
+                imgHeight: 547,                
+                arrowsNavAutoHide: false
+            });
+        }
+
+    </script> 
+   
+</body>
+</html>

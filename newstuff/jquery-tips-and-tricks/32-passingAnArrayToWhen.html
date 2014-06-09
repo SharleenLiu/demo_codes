@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>passing An Array To $.when</title>  
+    
+</head>
+<body>
+    <h1>passing An Array To $.when</h1>
+    <div id="content">
+        Name: <span id="customerName"></span>
+        <br />
+        Order Count: <span id="orderCount"></span>
+    </div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>    
+    <script src="js/dataService.js" type="text/javascript"></script>
+    <script>
+        var custID = 1;
+        //$.when create master defer object
+        //useful #1
+        $.when(dataService.getCustomer(custID),
+                dataService.getOrders(custID))
+            .done(function (customerData, ordersData) {
+                //process data
+                var cust = customerData[0]; //returned Array[3], the first one which is the data we need
+                $("#customerName").html(cust.FirstName + " " + cust.LastName);
+                $("#orderCount").html(orderData[0].length);
+            })
+            .fail(function (jqXHR, statusText, err) {
+                alert("Error using $.when(); " + err);
+            });
+
+            //useful #2
+            dataService.getCustomerAndOrders2(custID)
+            .done(function (customerData, orderData) { // if both successfully               
+                var cust = customerData[0];
+                $("#customerName").html(cust.FirstName + " " + cust.LastName);
+                $("#orderCount").html(orderData[0].length);
+            })
+            .fail(function (jqXHR, statusText, err) { //if any of them failed
+                alert("Error using $.when(); " + err);
+            });
+       
+    </script>
+</body>
+</html>

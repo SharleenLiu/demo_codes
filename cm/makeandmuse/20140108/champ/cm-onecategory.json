@@ -1,0 +1,36 @@
+{
+  "categoryDetailServiceInfo": {
+    "categories": {
+      "category": [
+        {
+          "categoryId": 30686276,
+          "title": "Maker: Reigning Champ",
+          "alternateTitle": "Maker: Reigning Champ",
+          "productsCount": 6,
+          "categoryProducts": {
+            "product": [
+              {
+                "productId": 28534726
+              },
+              {
+                "productId": 28534706
+              },
+              {
+                "productId": 28534716
+              },
+              {
+                "productId": 28534746
+              },
+              {
+                "productId": 28534736
+              },
+              {
+                "productId": 28534756
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

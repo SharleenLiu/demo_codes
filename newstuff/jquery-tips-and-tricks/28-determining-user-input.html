@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Determining User Input</title>
+    <meta charset=utf-8 />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />   
+    <link href="Content/toastr.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+       
+    </style>    
+</head>
+<body>
+    <form class="form-horizontal well">
+        <fieldset>
+            <legend>demo</legend>
+            <div class="control-group">
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <input id="name" type="text" class="input-xlarge" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="profileImageUrl">Profile Image</label>
+                <div class="controls">
+                    <input id="profileImageUrl" type="text" class="input-xlarge" />
+                </div>
+            </div>
+            <div class="control-group">               
+                <div class="controls">
+                    <img id="profileImage" src="" class="img-rounded" alt="" />
+                </div>
+            </div>
+        </fieldset>    
+    </form>
+    <div id="output"></div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>   
+    <script src="js/toastr.min.js" type="text/javascript"></script>  
+    <script>
+
+        $("#name").on("keypress", function (e) {
+            toastr.success(e.which, "keypress");
+        });
+
+        $("#profileImageUrl").on("keyup", function () {
+            $("#profileImage").attr("src", $(this).val()); //http://www.ralphlaurenhome.com/graphics/fa13/HP_FA13_v3_05.jpg
+        });
+
+        $("#profileImage").on("click", function (e) {
+            toastr.success(e.offsetX + " " + e.offsetY, "Offset");
+        });
+    </script>     
+</body>
+</html>

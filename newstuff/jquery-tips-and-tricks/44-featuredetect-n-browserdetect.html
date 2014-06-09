@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feature and Browser Detect</title>
+    <meta charset=utf-8 />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+    
+    <style type="text/css">        
+    </style>    
+</head>
+<body>
+    <form class="form-horizontal well">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="firstName">First Name</label>
+                <div class="controls">
+                    <input id="firstName" type="text" class="input-xlarge" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="lastName">Last Name</label>
+                <div class="controls">
+                    <input id="lastName" type="text" class="input-xlarge" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="birthday">Birthday</label>
+                <div class="controls">
+                    <input id="birthday" type="date" class="date input-xlarge" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="anniversary">Anniversary</label>
+                <div class="controls">
+                    <input id="anniversary" type="date" class="date input-xlarge" />
+                </div>
+            </div>
+            <div class="form-actions">                
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button class="btn">Cancel</button>
+            </div>
+        </fieldset>    
+    </form>
+    <!--<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>-->
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>  
+    <!--<script src="js/jquery-migrate-1.2.1.js" type="text/javascript"></script>-->     
+    <script src="js/modernizr.custom-2.6.2.js" type="text/javascript"></script>   
+    <script>
+        //Feature Detect over $.browser Detect, $.browser Detect is called Browser Sniffing
+        //jQuery 1.8 deprecated the $.browser object and 1.9 removed it
+        //However, there is a jQuery Migration plugin that restores $.browser, which solve third party dependecy
+        
+        //Feature Deteced use Modernizr directly, ex:
+//        if (!Modernizr.input.placeholder) {
+//            $.getScript("js/jquery.placeholder.min.js", function () { $("input,textarea").placeholder()})
+//        }
+
+        //alter way
+//        Modernizr.load({
+//            test: Modernizr.input.placeholder,                          //condition to test
+//            nope: ["js/jquery.placeholder.min.js"],                     //library to load
+//            complete: function () { $("input,textarea").placeholder() } //function to execute for completion  
+//        });
+
+
+        //#1 use this script jq183
+        //<script src="js/jquery-1.8.3.min.js" type="text/javascript"><script>
+        //<script src="js/modernizr-1.7.min.js" type="text/javascript"><script>
+//        if ($.browser.msie && $.browser.version <= 10) { //ie do not support datepicker
+//            $("link[rel='stylesheet']:last")
+//                .after("<link href='Content/datepicker.css' rel='stylesheet' type='text/css' />");
+//            $.getScript("js/bootstrap-datepicker.js", function () {
+//                $("input[type=date]").datepicker();
+//            });
+//        }
+
+        //#2 use this script jq190 above, which not support date type and $.browser any more, so error, changes Modernizr, native datepicker for Chrome,      
+        //<script src="js/jquery-2.0.0.min.js" type="text/javascript"><script>
+        //<script src="js/modernizr-1.7.min.js" type="text/javascript"><script>
+        if (!Modernizr.inputtypes.date) { 
+            $("link[rel='stylesheet']:last")
+                .after("<link href='Content/datepicker.css' rel='stylesheet' type='text/css' />"); //still not perfect!!! load the js whatever for Chrome and ie
+            $.getScript("js/bootstrap-datepicker.js", function () {
+                $("input[type=date]").datepicker(); //ie will work
+            });
+        }
+
+        //#3 we use Modernizr load method - NOT WORK???
+        //<script src="js/jquery-1.10.2.min.js" type="text/javascript"><script>      
+        //<script src="js/modernizr.custom-2.6.2.js" type="text/javascript"><script>   
+//        Modernizr.load({
+//            test: Modernizr.inputtypes.date,
+//            nope: [
+//                "Content/datepicker.css",
+//                "js/bootstrap-datepicker.js"
+//            ],
+//            complete: function () { //this will always invoke regardless test result yep or nope, so need double check only load if it is ie
+//                if (!Modernizr.inputtypes.date) {                   
+//                    $("input[type=date]").datepicker();
+//                }
+//            }
+//        });
+
+    </script>
+</body>
+</html>

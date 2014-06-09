@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>JS Inheritance Demo</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () { 
+            output('_PARENT_');
+            var P = new Parent();
+            P.publicMethod();
+
+            output('_GRAND CHILD_');
+            var GC = new GrandChild({
+                publicMethod: function() {
+                    return 'GC publicMethod';
+                },
+                abstractMethod: function() {
+                    return 'GC Abstract Method';
+                }
+            });
+            output(GC.publicMethod());
+            output(GC.abstractMethod());
+
+            output('_GREAT GRAND CHILD_');
+            var GGC = new GreatGrandChild();
+            output(GGC.publicMethod());
+            output(GGC.abstractMethod());
+    });
+
+    var Parent = function (o) {
+        var self = this; // jump scope
+        this.publicVariable = 'P publicVariable'; // public (privileged) variable
+        var privateVariable = 'P privateVariable'; // private variable
+        this.publicMethod = function () {
+            output(self.publicVariable); // has access to public variables, methods
+            output(privateVariable); // has access to private variables
+            privateMethod(); // has access to private methods
+        }
+        this.getPrivateVariable = function () {
+            return privateVariable;
+        }
+        var privateMethod = function () {
+            output(self.publicVariable, privateVariable); // has access to public, private variables, methods.
+        }
+        this.abstractMethod = function () { // this is the closest thing JavaScript has to an abstract method
+            throw 'abstractMethod() is not defined';
+        }
+
+        Extend(this, o); // simple instantiation
+        return this;
+    }
+
+    // ** this is all you really need for inheritance.
+    var Child = function (o) {
+        var child = new Parent(Extend(this, o)); // simple inheritance
+        return child;
+    }
+
+    var GrandChild = function (o) {
+        this.helloWorld = function (name) {
+            return 'Hello, ' + name + '.';
+        }
+        var grandChild = new Child(Extend(this, o)); // simple inheritance
+        return grandChild;
+    }
+
+    var GreatGrandChild = function (o) {
+        this.publicVariable = 'GGC publicVariable'; // override the variable set in Parent
+        this.publicMethod = function () {
+            return privateMethod();
+        }
+        var privateMethod = function () {
+            return 'GGC privateMethod';
+        }
+        this.abstractMethod = function () {
+            return 'GGC Abstract Method';
+        }
+
+        var greatGrandChild = new GrandChild(Extend(this, o)); // simple inheritance
+
+        output(greatGrandChild.getPrivateVariable()); // has access to all parent's public methods, variables
+        output(greatGrandChild.helloWorld('Great Grand Child'));
+
+        return greatGrandChild;
+    }
+
+    // ** this is how you could use this inheritance model for simple object instantiation.
+    var InstantiatedObject = new Parent({
+        abstractMethod: function() {
+            return 'GC Abstract Method';
+        }
+    });
+
+    function output(str) {
+        $('ul').append('<li>'+str+'</li>');
+    }
+
+    function Extend(a) {
+        if(typeof a != 'object')
+            return false;
+        function appendRecursively(a, b) {
+            if(typeof a != 'object' || typeof b != 'object')
+                return false;
+            for(var i in b) {
+                if(appendRecursively(a[i], b[i]))
+                    continue;
+                a[i] = b[i];
+            }
+            return true;
+        }
+        for(var i in arguments) {
+            if(i == 0)
+                continue;
+            appendRecursively(a, arguments[i]);
+        }
+        return a;
+    }
+
+    </script>
+</head>
+<body>   
+    <ul>
+    </ul>
+</body>
+</html>
+

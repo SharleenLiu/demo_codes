@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulating The DOM</title>    
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .hidden{ display:none;}
+    </style>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>  
+    <script>        
+        $(document).ready(function () {
+        //try to touch DOM as less as possible
+        //#1
+            $("#loadCustomersButton").click(function () {
+                var $tbody = $("#customersTable tbody");
+                $tbody.html("");
+                var start = new Date();
+                var custs = getCustomers();
+                var html = [];
+                for (var i = 0; i < custs.length; i++) {
+                    var cust = custs[i];
+                    html.push("<tr>" +
+                    "<td>" + cust.id + "</td>" +
+                    "<td>" + cust.name + "</td>" +
+                    "<td>" + cust.address + "</td>" +
+                    "<td>" + cust.city + "</td>" +
+                    "<td>" + cust.state + "</td>" +
+                    "<td>" + cust.zip + "</td>" +
+                    "<td>" + cust.newCustomer + "</td></tr>");
+                }
+                $tbody.append(html.join(""));  //only touch DOM once, jsperf.com        
+                var diff = new Date().getTime() - start.getTime();
+                $("#diff").html(diff);
+            });
+
+        //#2
+//        $("#loadCustomersButton").click(function () {
+//            var $tbody = $("#customersTable tbody");
+//            $tbody.html("");
+//            var start = new Date();
+//            var custs = getCustomers();
+//            var html = '';
+//            for (var i = 0; i < custs.length; i++) {
+//                var cust = custs[i];
+//                html += "<tr>" +
+//                "<td>" + cust.id + "</td>" +
+//                "<td>" + cust.name + "</td>" +
+//                "<td>" + cust.address + "</td>" +
+//                "<td>" + cust.city + "</td>" +
+//                "<td>" + cust.state + "</td>" +
+//                "<td>" + cust.zip + "</td>" +
+//                "<td>" + cust.newCustomer + "</td></tr>";
+//            }
+//            $tbody.append(html);
+//            var diff = new Date().getTime() - start.getTime();
+//            $("#diff").html(diff);
+//        });
+
+    });
+
+    function getCustomers() {
+        var custs = [];
+        for (var i = 0; i < 4000; i++) {
+            var cust = {
+                id: i,
+                name: "John Smith",
+                address: "123 Main Street",
+                city: "New York",
+                state: "NY",
+                zip: 10022,
+                newCustomer: true
+            };
+            custs.push(cust);
+        }
+        return custs;
+    }
+
+    </script>
+</head>
+<body>
+    <div>
+        <button id="loadCustomersButton">Load Customers</button>
+        Time (millis): <span id="diff"></span>
+        <div id="container">
+            <table id="customersTable">
+                <tr>
+                    <td>ID</td>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>New Customer?</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

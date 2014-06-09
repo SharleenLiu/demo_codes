@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using jQuery noConflict method demo 3</title>
+    <meta charset=utf-8 />   
+       
+</head>
+<body>  
+    <input id="url" value="http://yahoo.com" />
+       
+    <script src="js/prototype.js"></script>
+    <script src="js/jquery-2.0.0.min.js"></script>
+   
+    <script>
+        //$.noConflict(); //$ now back to Prototype
+        jQuery.noConflict(); 
+        
+
+        jQuery(document).ready(function ($) {
+            //$ is jQuery in this scope           
+
+        })
+
+        (function ($) {
+            //$ is jQuery in this scope
+
+        }(jQuery));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using jQuery noConflict method</title>
+    <meta charset=utf-8 />   
+       
+</head>
+<body>  
+    <input id="url" value="http://yahoo.com" />
+      
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>    
+    <script>
+        var jq183 = jQuery.noConflict(true); // or var jq183 = $.noConflict(true);   
+    </script>
+    <script src="js/jquery-1.10.2.min.js"></script>   
+    <script>
+        jQuery.noConflict();                        //$ back to prototype
+        console.log(jQuery.fn.jquery);              //1.10.2
+        console.log(jQuery.browser);                //undefined - removed after jQuery 1.9            
+        $("url").style.backgroundColor = "pink";    //Prototype code
+        jQuery("#url").animate({ width: "800px", height: "100px", fontSize: "80px" }, 1000); //jQuery 1.10.2 version animation
+        console.log(jq183.fn.jquery)                //1.8.3
+        console.log(jq183.browser.version);         //29.0.1547.66
+                
+    </script>
+</body>
+</html>

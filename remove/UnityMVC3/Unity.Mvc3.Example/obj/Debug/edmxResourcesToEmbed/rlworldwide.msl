@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rlworldwideModelStoreContainer" CdmEntityContainer="rlworldwideEntities1">
+    <EntitySetMapping Name="icg_marketing_data">
+      <EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data">
+        <MappingFragment StoreEntitySet="icg_marketing_data">
+          <ScalarProperty Name="icg_cap_id" ColumnName="icg_cap_id" />
+          <ScalarProperty Name="icg_cap_site" ColumnName="icg_cap_site" />
+          <ScalarProperty Name="icg_cap_email" ColumnName="icg_cap_email" />
+          <ScalarProperty Name="icg_cap_prefix" ColumnName="icg_cap_prefix" />
+          <ScalarProperty Name="icg_cap_fname" ColumnName="icg_cap_fname" />
+          <ScalarProperty Name="icg_cap_lname" ColumnName="icg_cap_lname" />
+          <ScalarProperty Name="icg_cap_address1" ColumnName="icg_cap_address1" />
+          <ScalarProperty Name="icg_cap_address2" ColumnName="icg_cap_address2" />
+          <ScalarProperty Name="icg_cap_address3" ColumnName="icg_cap_address3" />
+          <ScalarProperty Name="icg_cap_city" ColumnName="icg_cap_city" />
+          <ScalarProperty Name="icg_cap_state" ColumnName="icg_cap_state" />
+          <ScalarProperty Name="icg_cap_province" ColumnName="icg_cap_province" />
+          <ScalarProperty Name="icg_cap_zip" ColumnName="icg_cap_zip" />
+          <ScalarProperty Name="icg_cap_country" ColumnName="icg_cap_country" />
+          <ScalarProperty Name="icg_cap_mphone" ColumnName="icg_cap_mphone" />
+          <ScalarProperty Name="icg_cap_hphone" ColumnName="icg_cap_hphone" />
+          <ScalarProperty Name="icg_cap_ccode" ColumnName="icg_cap_ccode" />
+          <ScalarProperty Name="icg_cap_age" ColumnName="icg_cap_age" />
+          <ScalarProperty Name="icg_cap_gender" ColumnName="icg_cap_gender" />
+          <ScalarProperty Name="icg_cap_optdot" ColumnName="icg_cap_optdot" />
+          <ScalarProperty Name="icg_cap_opthome" ColumnName="icg_cap_opthome" />
+          <ScalarProperty Name="icg_cap_optrun" ColumnName="icg_cap_optrun" />
+          <ScalarProperty Name="icg_cap_optrlg" ColumnName="icg_cap_optrlg" />
+          <ScalarProperty Name="icg_cap_optrgb" ColumnName="icg_cap_optrgb" />
+          <ScalarProperty Name="icg_cap_shopdot" ColumnName="icg_cap_shopdot" />
+          <ScalarProperty Name="icg_cap_shopprl" ColumnName="icg_cap_shopprl" />
+          <ScalarProperty Name="icg_cap_shopfoa" ColumnName="icg_cap_shopfoa" />
+          <ScalarProperty Name="icg_cap_shopdept" ColumnName="icg_cap_shopdept" />
+          <ScalarProperty Name="icg_cap_opt_prodesigner" ColumnName="icg_cap_opt_prodesigner" />
+          <ScalarProperty Name="icg_cap_opt_procontractor" ColumnName="icg_cap_opt_procontractor" />
+          <ScalarProperty Name="icg_cap_hhear" ColumnName="icg_cap_hhear" />
+          <ScalarProperty Name="icg_cap_sms_sent" ColumnName="icg_cap_sms_sent" />
+          <ScalarProperty Name="icg_cap_addate" ColumnName="icg_cap_addate" />
+          <ScalarProperty Name="icg_cap_UpdateDT" ColumnName="icg_cap_UpdateDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icg_marketing_data_sitenum">
+      <EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data_sitenum">
+        <MappingFragment StoreEntitySet="icg_marketing_data_sitenum">
+          <ScalarProperty Name="icg_cap_num_id" ColumnName="icg_cap_num_id" />
+          <ScalarProperty Name="icg_cap_number" ColumnName="icg_cap_number" />
+          <ScalarProperty Name="icg_cap_site" ColumnName="icg_cap_site" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icg_marketing_data_supplement">
+      <EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data_supplement">
+        <MappingFragment StoreEntitySet="icg_marketing_data_supplement">
+          <ScalarProperty Name="icg_cap_Supplement_id" ColumnName="icg_cap_Supplement_id" />
+          <ScalarProperty Name="icg_cap_id" ColumnName="icg_cap_id" />
+          <ScalarProperty Name="icg_cap_RegisterforNews" ColumnName="icg_cap_RegisterforNews" />
+          <ScalarProperty Name="icg_cap_Current_RL_customer" ColumnName="icg_cap_Current_RL_customer" />
+          <ScalarProperty Name="icg_cap_RL_Store" ColumnName="icg_cap_RL_Store" />
+          <ScalarProperty Name="icg_cap_Subject" ColumnName="icg_cap_Subject" />
+          <ScalarProperty Name="icg_cap_Message" ColumnName="icg_cap_Message" />
+          <ScalarProperty Name="icg_cap_HeardAboutUs" ColumnName="icg_cap_HeardAboutUs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_SaveMarketingCapture" FunctionName="rlworldwideModel.Store.usp_SaveMarketingCapture" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using The End Function</title>  
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script>
+       //avoid singleton
+        var newData = function () {
+            return {
+                token: null,
+                users: []
+            }
+        };
+
+        var users = {
+            init: function (data) {
+                this.data = data;   //here this is the users
+                //console.log(this);
+            },
+            setToken: function (username, password) {
+                this.data.token = username + password;
+            },
+            addUser: function (user) {
+                var success = false;
+                if (this.data.token) {
+                    this.data.users.push(user);
+                    success = true;
+                }
+
+                return success;
+            }
+        };
+
+        users.init(newData());
+        users.setToken("xliu", "good");
+        users.addUser({ username: "xh" });
+        console.log(users.data);
+    </script> 
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Highlights - Ralph Lauren Mobile</title>
+	<link rel="stylesheet"  href="../css/themes/default/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="../css/jqm-demos.css">  
+	<link rel="shortcut icon" href="../favicon.JPG">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+    <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>	
+    <script src="../js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+	
+	
+</head>
+<body>
+<div data-role="page" class="jqm-demos" data-quicklinks="true">
+
+	<div data-role="header" class="jqm-header">
+        <h1 class="jqm-logo"><a href="../"><img src="../img/polo_logo171x139.jpg" alt="" /></a></h1>
+		<a href="#" class="jqm-navmenu-link" data-icon="bars" data-iconpos="notext">Navigation</a>
+		<a href="#" class="jqm-search-link" data-icon="search" data-iconpos="notext">Search</a>
+
+
+	</div><!-- /header -->
+
+	<div data-role="content" class="jqm-content">
+
+			<h1>Introduction</h1>
+
+			<p class="jqm-intro">jQuery Mobile is a touch-friendly UI framework built on jQuery Core that works across all popular mobile, tablet and desktop platforms.
+			</p>
+
+			<h2>Introduction</h2>
+
+			<p>jQuery Mobile is a user interface framework based on jQuery that works across all popular phones, tablet, e-reader, and desktop platforms. Built with accessibility and universal access in mind, we follow progressive enhancement and <a href="rwd.html">responsive web design (RWD)</a> principles. HTML5 Markup-driven configuration makes it easy to learn, but a powerful <a href="http://api.jquerymobile.com/">API</a> makes it easy to deeply customize the library.</p>
+
+			<h2>Pages & Dialogs</h2>
+
+			<p>A <a href="../widgets/pages/">page</a> in jQuery Mobile consists of an element with a <code> data-role="page"</code> attribute. Within the "page" container, any valid HTML markup can be used, but for typical pages in jQuery Mobile, the immediate children of a "page" are divs with data-roles of <code>"header"</code>, <code>"content"</code>, and <code>"footer"</code>. The baseline requirement for a page is only the page wrapper to support the navigation system, the rest is optional. </p>
+
+			
+				<h4>Buttons</h4>
+				<p>There are a few ways to make <a href="../widgets/buttons/" title="buttons-types">buttons</a>, but let's turn a link into a button so it's easy to click. Just start with a link and add a <code>data-role="button"</code> attribute to it.  You can add an <a href="../widgets/icons/">icon</a> with the <code>data-icon</code> attribute and optionally set its position with the <code>data-iconpos</code> attribute.</p>
+
+				<div data-demo-html="true">
+				<a href="#" data-role="button" data-icon="star">Star button</a>
+				</div><!--/demo-html -->
+
+			<h4>Listviews</h4>
+			<p>jQuery Mobile includes a diverse set of common <a href="../widgets/listviews/" title="docs-lists">listviews</a> that are coded as lists with a <code>data-role="listview"</code> added. Here is a simple linked list that has a role of <code>listview</code>. We're going to make this look like an inset module by adding a <code>data-inset="true"</code> attribute and we add a dynamic search filter with <code>data-filter="true"</code>.</p>
+
+			<div data-demo-html="true">
+			<ul data-role="listview" data-inset="true" data-filter="true">
+				<li><a href="#">Acura</a></li>
+				<li><a href="#">Audi</a></li>
+				<li><a href="#">BMW</a></li>
+				<li><a href="#">Cadillac</a></li>
+				<li><a href="#">Ferrari</a></li>
+			</ul>
+			</div><!--/demo-html -->
+
+			<h4>Form elements</h4>
+			<p>The framework contains a full set of <a href="../widgets/forms/">form elements</a> that are automatically enhanced into touch-friendly styled widgets. Here's a slider made with the new HTML5 input type of range, no <code>data-role</code> needed. Be sure to wrap these in a <code>form</code> element and always properly associate a <code>label</code> with every form element.</p>
+
+			<div data-demo-html="true">
+			<form>
+				<label for="textinput-s">Text Input:</label>
+				<input type="text" name="textinput-s" id="textinput-s" placeholder="Text input" value="" data-clear-btn="true">
+
+				<label for="select-native-s">Select:</label>
+				<select name="select-native-s" id="select-native-s">
+					<option value="small">One</option>
+					<option value="medium">Two</option>
+					<option value="large">Three</option>
+				</select>
+
+				<label for="slider-s">Input slider:</label>
+				<input type="range" name="slider-s" id="slider-s" value="25" min="0" max="100" data-highlight="true"  />
+			</form>
+
+			</div><!--/demo-html -->
+
+			<h2>Responsive Design</h2>
+
+			<p>jQuery Mobile has always been designed to work within a <a href="rwd.html">responsive web design (RWD)</a> context and our docs and forms had a few responsive elements from the very start. All the widgets are built to be 100% flexible in width to fit easily inside any responsive layout system you choose to build. </p>
+
+	</div><!-- /panel -->
+
+
+		</div><!-- /page -->
+		</body>
+		</html>
+

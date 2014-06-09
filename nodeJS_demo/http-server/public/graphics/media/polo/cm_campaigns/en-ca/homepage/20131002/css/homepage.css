@@ -1,0 +1,19 @@
+#cm_home{ width:960px; border:0px; overflow:hidden; }
+
+.hpwomen {  position:absolute; top:300px; left: 600px; width: 115px; height: 11px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/SHOPWOMEN_CTA.png) no-repeat left 0px;}
+.hpwomen:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/SHOPWOMEN_CTA.png) no-repeat right 0px;}
+
+.hpmen { position:absolute; top:300px; left: 730px; width: 89px; height: 11px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/SHOPMEN_CTA.png) no-repeat left 0px;}
+.hpmen:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/SHOPMEN_CTA.png) no-repeat right 0px;}
+
+.bucket { float: left; width: 315px; height: 292px; margin: 0 7px 0px 0px; position:relative; }
+
+.hpbucket1 { position:absolute; top:265px; left: 115px; width: 77px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_SHOPNOW_CTA.png) no-repeat left 0px;}
+.hpbucket1:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_SHOPNOW_CTA.png) no-repeat right 0px;}
+
+.hpbucket2 { position:absolute; top:265px; left: 49px; width: 223px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_GETINSPIRED_CTA.png) no-repeat left 0px;}
+.hpbucket2:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_GETINSPIRED_CTA.png) no-repeat right 0px;}
+
+.hpbucket3 { position:absolute; top:265px; left: 118px; width: 77px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_SHOPNOW_CTA.png) no-repeat left 0px;}
+.hpbucket3:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131002/img/BKT_SHOPNOW_CTA.png) no-repeat right 0px;}
+

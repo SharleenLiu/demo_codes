@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using An Object With Setter Methods</title>  
+    
+</head>
+<body>
+    <ul id="container"></ul>   
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script>  
+        //no need document ready if in the bottom    
+        var links = [
+            { title: "jQuery", href: "http://jquery.com" },
+            { title: "AngularJS", href: "http://angularjs.org" }
+        ];
+
+        var html = [];
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            var $li = $('<li><a target="_blank" /></li>')
+                        .find('a')
+                            .html(link.title)
+                            .attr({ 
+                                "title": link.title,
+                                "href": link.href
+                            })
+                            .css({
+                                //normally no inline css
+                            })
+                            .end();
+            html.push($li);
+        }
+        
+        $("#container").append(html);
+    </script> 
+</body>
+</html>

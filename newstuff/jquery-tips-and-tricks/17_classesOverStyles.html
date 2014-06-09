@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classes over styles</title>   
+    <style type="text/css">
+        .panel {
+           background-color: #efefef;
+           color: #000000;
+           border: 1px solid #000000;
+           margin-top: 10px 
+            } 
+        .hover {
+            background-color: yellow;
+        }  
+    </style>    
+</head>
+<body>
+    <div id="container">
+        <div>Panel 1</div>
+        <div>Panel 2</div>
+        <div>Panel 3</div>
+        <div>Panel 4</div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>  
+    <script>
+        //this way works BUT
+        $("#container div").css({
+            "background-color": "#efefef",
+            "color": "#000000",
+            "border": "1px solid #000000",
+            "margin-top": "10px"
+        }).hover(function () {
+            $(this).css("background-color", "yellow");
+        }, function () {
+            $(this).css("background-color", "#efefef");
+        });
+
+        $("#container div")
+            .addClass("panel")
+            .hover(function () {
+                $(this).toggleClass("hover");
+            });        
+    </script>    
+</body>
+</html>

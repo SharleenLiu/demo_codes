@@ -1,0 +1,16 @@
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Unity.Mvc3.Example.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Unity.Mvc3.Example.pdb
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.ServiceLocation.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.Unity.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Unity.Mvc3.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.ServiceLocation.xml
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.Unity.xml
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\obj\Debug\ResolveAssemblyReference.cache
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\obj\Debug\Unity.Mvc3.Example.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\obj\Debug\Unity.Mvc3.Example.pdb
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\MyResources.dll
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\MyResources.pdb
+C:\WebApps\UnityMVC3\Unity.Mvc3.Example\bin\fr-FR\MyResources.resources.dll

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+     <script src="Scripts/jquery-1.7.1.js"></script>
+   
+    <script src="Scripts/modernizr-2.5.3.js"></script>
+     <script>
+         $(document).ready(function () {
+             $width = $('#content').width();
+             $('#content img').css({
+                 'max-width': $width, 'height': 'auto'
+             });
+         });
+    </script>   
+    
+</head>
+<body>
+<!--http://eisabainyo.net/weblog/2011/01/31/top-10-jquery-mobile-code-snippets-that-you-need-to-know/-->
+<!--But media queries only really work well when you're dealing with a responsive site design, not a site with a custom mobile template.-->
+    <div data-role="page" data-theme="b">
+        <div data-role="header">
+            <h1>Home Page</h1>           
+        </div>        
+       
+        <div id="wrapper">
+            <div id="content">  
+                <img src="Content/graphics/rugbyremove1.jpg" alt="" />                
+            </div>
+        </div>
+    </div>
+
+   
+
+    
+</body>
+</html>

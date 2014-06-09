@@ -1,0 +1,183 @@
+    #chino-wrapper {
+        position: relative;
+        width: 760px;
+        }
+
+
+    /* ----- SLIDER ----- */
+    .feature-slider {
+        position: relative;
+        }
+
+    .feature-slider,
+    .feature-slider .cycle,
+    .feature-slider .cycle .slide {
+        height: 503px;
+        }
+
+    .feature-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        }
+    
+    .feature-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 760px; 
+        top:0; 
+        left:0;
+        }
+	
+   .feature-slider .arrow {
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 62px;
+        margin-top: -31px;
+        vertical-align: middle;
+	    width: 32px;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+	    }
+
+    .feature-slider .arrow.prev        { background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/20130805/arrow_left.png) no-repeat 0 0; left: 0px; }
+	.feature-slider .arrow.next        { background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/20130805/arrow_right.png) no-repeat 0 0; right: 0px; }
+    .feature-slider .arrow:hover       { background-position: -32px 0 }
+    .feature-slider .arrow.disabled    { display: none !important; }
+    .feature-slider .pager             { display: none; }
+        
+    .clear { clear: both; }
+
+    .feature-slider .arrow {
+	    zoom: 1;
+	    *display: inline;
+	    }
+
+
+    /* ----- LINKS ----- */
+    .link-sidebyside {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/0406/Btns/IntroSeeFits_OffState.png) no-repeat 0px 0px;
+        height: 129px;
+        width: 129px;
+        position: absolute;
+        top: 180px;
+        right: 20px;
+        }
+    .link-intro {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .link-intro:hover {
+        background-position: 0px bottom;
+    }
+
+    .link-intro-kennedy {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/intro_kennedy.png) no-repeat 0px 0px;
+        height: 39px;
+        width: 127px;
+        }
+
+    .link-intro-davis {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/intro_davis.png) no-repeat 0px 0px;
+        height: 39px;
+        width: 127px;
+        }
+
+    .link-intro-connor {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/intro_connor.png) no-repeat 0px 0px;
+        height: 39px;
+        width: 127px;
+        }
+
+    
+
+    .intro-links {
+        position: absolute;
+        right: 65px;
+        top: 280px;
+    }
+    .link-kennedy {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/0406/Btns/Kennedy_OffState.png) no-repeat 0px 0px;
+        height: 62px;
+        width: 250px;
+        }
+
+    .link-davis {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/0406/Btns/Davis_OffState.png) no-repeat 0px 0px;
+        height: 62px;
+        width: 250px;
+        }
+
+    .link-connor {
+        background: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/0406/Btns/Connor_OffState.png) no-repeat 0px 0px;
+        height: 62px;
+        width: 250px;
+        }
+     .links-slide {
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        overflow: hidden;
+     }
+        .links-slide li {
+            margin: 0px 4px 0px 4px;
+            padding: 0px;
+            float: left;
+        }
+            .links-slide li a {
+                display: block;
+                height: 19px;
+                background-repeat: no-repeat;
+                background-position: 0px -17px;
+            }
+            .links-slide li a:hover,
+             .links-slide li a.active {
+                background-position: 0px 0px;
+            }
+            .link-connor {
+                width: 64px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/connor.png);
+            }
+            .link-davis {
+                width: 45px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/davis.png);
+            }
+            .link-kennedy {
+                width: 68px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/menchinoguide/20131002/img/071013/kennedy.png);
+            }
+    #slide2 .links-slide {
+        left: 40px;
+        top: 361px;
+    }
+    #slide3 .links-slide {
+        left: 47px;
+        top: 299px;
+    }
+    #slide4 .links-slide {
+        left: 40px;
+        top: 361px;
+    }
+    #slide5 .links-slide {
+        left: 54px;
+        top: 300px;
+    }
+    #slide6 .links-slide {
+        left: 38px;
+        top: 362px;
+    }
+    #slide7 .links-slide {
+        left: 54px;
+        top: 289px;
+    }
+    #slide8 .links-slide {
+        left: 54px;
+        top: 289px;
+    }
+

@@ -1,0 +1,59 @@
+    #cashmere-wrapper {
+        position: relative;
+        width: 760px;
+        }
+
+    .feature-slider {
+        position: relative;
+        }
+
+    .feature-slider,
+    .feature-slider .cycle,
+    .feature-slider .cycle .slide {
+        height: 541px;
+        }
+    
+    .feature-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        }
+    
+    .feature-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 760px; 
+        position: absolute;
+        top:0; 
+        left:0;
+        }
+
+    .feature-slider .arrow {
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 62px;
+        margin-top: -31px;
+        vertical-align: middle;
+	    width: 32px;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+	    }
+
+    .feature-slider .arrow.prev        { background: url(/graphics/media/polo/cm_campaigns/en-us/mencashmere/20131002/img/arrow_left.png) no-repeat 0 0; left: 0px; }
+	.feature-slider .arrow.next       { background: url(/graphics/media/polo/cm_campaigns/en-us/mencashmere/20131002/img/arrow_right.png) no-repeat 0 0; right: 0px; }
+    .feature-slider .arrow:hover { background-position: -32px 0 }
+    .feature-slider .arrow.disabled    { display: none !important; }
+    .feature-slider .pager             { display: none; }
+        
+    .clear { clear: both; }
+
+    .feature-slider .arrow {
+	    zoom: 1;
+	    *display: inline;
+	    }
+

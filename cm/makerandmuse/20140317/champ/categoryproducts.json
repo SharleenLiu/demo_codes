@@ -1,0 +1,104 @@
+{
+  "CategoryId": 30686276,
+  "CategoryTitle": "Maker: Reigning Champ",
+  "CategoryAltTitle": "Maker: Reigning Champ",
+  "CategoryProdCount": 6,
+  "CategoryProducts": [
+    {
+      "productId": 28534726,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 135.5
+      },
+      "productTitle": "Reigning Champ x CM Crew",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182338_standard_t167.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "productId": 28534706,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 165.5
+      },
+      "productTitle": "Reigning Champ x CM Zip Hoodie",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182323_standard_t167.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "productId": 28534716,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 155.5
+      },
+      "productTitle": "Reigning Champ x CM Hoodie",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182328_standard_t167.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "productId": 28534746,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 195.5
+      },
+      "productTitle": "Reigning Champ x CM Robe",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182348_standard_t167.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "productId": 28534736,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 115.5
+      },
+      "productTitle": "Reigning Champ x CM Logo Pant",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182343_standard_t167.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "productId": 28534756,
+      "productBaseURL": "/product/index.jsp?",
+      "productPrice": {
+        "current": 105.5
+      },
+      "productTitle": "Reigning Champ x CM Blanket",
+      "images": {
+        "image": [
+          {
+            "type": "T167",
+            "url": "http://www.clubmonaco.com/graphics/product_images/pCMUS1-17182349_standard_t167.jpg"
+          }
+        ]
+      }
+    }
+  ]
+}

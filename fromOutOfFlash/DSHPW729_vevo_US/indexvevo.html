@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vevo Example</title>
+    <script type="text/javascript">
+        var Vevo = {
+            Cache: {
+                Get: function () { return null; },
+                Add: function () { }
+            },
+            Environment: { Context: { IsLoggedIn: false} },
+            Resources: {
+                Watch_Views: ''
+            }
+        };
+    </script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/lib/jquery.plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/lib/jquery.plugins/jquery.stringbuilder.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/jquery.wipetouch.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/lib/ZeroClipboard.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/modernizr.foundation.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/foundation.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.API.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Enums.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Objects.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Repository.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.HTML5.Freewheel.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Tracking.ComScore.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.HTML5.Conviva.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Helpers.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Controls.Share.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Friends.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Home.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Videos.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Watch.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Xbox.js"></script>
+    <script type="text/javascript" src="http://cache.vevo.com/m/js/Vevo.Views.Settings.js"></script>
+    <script type="text/javascript" src="http://m.vevo.com/resources/Javascript?culture=en-US"></script>
+    <script type="text/javascript"src="http://adm.fwmrm.net/p/release/latest-JS/adm/dbg/AdManager.js" ></script>
+    <script type="text/javascript" src="http://livepassdl.conviva.com/ver/2.50.0.56856/LivePass.js?customerId=c3.Vevo-Test"></script>
+    <style type="text/css">
+
+        #videoPlayer, #wrapper, div#playerHTML5.player-container
+        {
+            width:512px;
+            height:288px;
+        }
+
+
+        body{
+            margin:0px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="playerHTML5" class="player-container" data-authurl="http://api.vevo.com/VideoService/AuthenticateVideo" data-sbid="C188A3CA-3593-453A-B995-394B7A7E5332">
+    <div class='ad-notification'>Advertisement</div>
+    <img id="loadingImg" src="http://cache.vevo.com/m/img/misc/ajax-loader.gif" style="position:relative;display:none;"/>
+    <img id='playerImg' src='http://cache.vevo.com/m/img/misc/Apple-Play-Button.png' style="position:relative;display:none;"/>
+    <img id='playerImgLight' src='http://cache.vevo.com/m/img/misc/Apple-Play-Button-Light.png' style="position:relative;display:none;"/>
+    <video id='videoPlayer' class='player' controls style='display:none;'></video>
+</div>
+</div>
+
+<script type="text/javascript" src="http://cache.vevo.com/m/js/comscore/streamsense.min.js"></script>
+<script type="text/javascript" src="http://cache.vevo.com/m/js/comscore/streamsense-html5.min.js"></script>
+
+<script type="text/javascript">
+    var height = 288;
+
+    $(document).ready(function () {
+        Vevo.Views.Watch.Init('SEUV71200032', null, null, null, 'ralphlauren_ralphlauren.com', {heightOverride:height, singleVideoOverride: true});
+    });
+</script>
+</body>
+</html>

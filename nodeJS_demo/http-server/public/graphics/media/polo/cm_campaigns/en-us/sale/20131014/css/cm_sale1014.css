@@ -1,0 +1,10 @@
+#cmsale1014{ position:relative; top:0px; left:0px; width:760px; height:467px;}
+
+.saleimg1014{position:absolute; top:0px; left:0px; width:760px; height:467px; border:none; }
+
+.salewomen1014 a { cursor:pointer; position:absolute; top:280px; left: 105px; width: 148px; height: 34px; background: url(/graphics/media/polo/cm_campaigns/en-us/sale/20131014/img/shopwomen_CTA.png) no-repeat left 0px;}
+.salewomen1014 a:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/sale/20131014/img/shopwomen_CTA.png) no-repeat right 0px;}
+
+.salemen1014 a { cursor:pointer; position:absolute; top:280px; left: 270px; width: 150px; height: 34px; background: url(/graphics/media/polo/cm_campaigns/en-us/sale/20131014/img/shopmen_CTA.png) no-repeat left 0px;}
+.salemen1014 a:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/sale/20131014/img/shopmen_CTA.png) no-repeat right 0px; }
+

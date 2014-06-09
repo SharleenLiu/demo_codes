@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using map method</title>
+    <meta charset=utf-8 />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />   
+    <link href="Content/toastr.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+       
+    </style>    
+</head>
+<body>
+    <input id="name" value="google" />
+    <input id="url" value="http://google.com" />
+    
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>   
+    <script src="js/toastr.min.js" type="text/javascript"></script>  
+    <script src="js/moment.min.js" type="text/javascript"></script>
+    <script>
+        var people = [
+            { fn: "John", ln: "Doe", bday: "11/19/1977" },
+            { fn: "Jane", ln: "Doe", bday: "10/12/1979" },
+            { fn: "Joe", ln: "Doe", bday: "07/06/2008" }
+        ];
+
+        //way #1
+        //make a new array, massage original data pull from anywhere(services or whatever), change to what you need.
+            people = $.map(people, function (person) {
+                return {
+                    firstName: person.fn,
+                    lastName: person.ln,
+                    age: moment().diff(moment(person.bday), "years")
+                };
+            });
+
+            toastr.success("<pre>" + JSON.stringify(people, null, 4) + "</pre>", "$.map()");
+
+        //way #2
+        //jQuery internal collection
+        // because we have internal collection, we do not have DOM elements any more, get() return the collection of strings
+        //this case 'google' 'http://google.com'
+            var output = $("input").map(function () {
+                return $(this).val();
+            }).get().join(" ");
+
+            toastr.success(output, "$().map()");
+    </script>     
+</body>
+</html>

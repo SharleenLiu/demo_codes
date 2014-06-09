@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using the $.type method</title>
+    <meta charset=utf-8 />    
+    <link href="Content/toastr.min.css" rel="stylesheet" type="text/css" />       
+</head>
+<body>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>    
+    <script>
+        //made up js literal, there are properties and methods
+        var jayQuery = {
+            element: { html: null },                                //property
+            html: function (value) {                                //method
+                if (value === undefined) {
+                    return this.element.html;                       //getter
+                } else if (typeof value === "string") {
+                    this.element.html = value;                      //setter
+                } else if (typeof value === "function") {
+                    this.element.html = value(this.element.html);   //setter
+                }
+            },
+            map: function (items, callback) {
+                var result = [];
+
+                //if (typeof items === "array") {   //never happen because typeof items always object
+                if ($.type(items) === "array") {     //use jQuery.type() !!!!
+                    
+                    for (var i = 0; i < items.length; i++) {
+                        result.push(callback(items[i], i));
+                    }
+                } else if (typeof items === "object") {
+                    for (var i in items) {
+                        result.push(callback(items[i], i));
+                    }
+                }
+
+                return result;
+            }
+        };
+
+        console.log("html: " + jayQuery.html());
+        jayQuery.html("Hello");
+        console.log("html: " + jayQuery.html());
+        jayQuery.html(function (item) { return item + " World"; });
+        console.log("html: " + jayQuery.html());
+        // ...........
+
+        var person = { firstName: "Xiaohong", middleName: "N/A", lastName: "Manor" }; //object example
+        console.log(jayQuery.map(person, function (value, key) {
+            return value.charAt(0);                                                 //should return new array ["X", "N", "M"]
+        }));
+
+        var names = ["John", "Susan"];                                              //array example
+        names[5] = "Joe";
+        console.log(names);                                                         //print out original ["John", "Susan", 5: "Joe"]
+        console.log(jayQuery.map(names, function (item, index) {
+            return item ? item.charAt(0) : undefined;                               //print out ["J", "S", "J" ], we want it return [J, S, undefined, undefined, undefined, J]?
+        }));
+        //so in console type >names, we got ["John", "Susan", undefined x 3, "Joe"]
+        //if ($.type(items) === "array") { will work in map method
+
+
+    </script>     
+</body>
+</html>

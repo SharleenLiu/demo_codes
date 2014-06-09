@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Ajax Converters</title>
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script> 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({ //everything goes here will automatically apply to all the ajax calls
+                converters: { //refer to jQuery.js converters section where some default converters already there
+                    "json jsond": function (data) {
+                        return data && data.hasOwnProperty("d") ? data.d : data;
+                    }
+                }
+            });
+
+            $("#makeCall").click(function () {
+                $.ajax({
+                    url: "/api/custom",
+                    dataType: "jsond", //<====== here we go
+                    success: function (data) {
+                        var custsHtml = "";
+                        for (var i = 0; i < data.length; i++) { //no need like for (var i = 0; i < data.d.length; i++) {
+                            var cust = data[i];
+                            custsHtml += cust.FirstName + " " + cust.LastName + "<br />";
+                        }
+                        $("#output").html(custsHtml);
+                    },
+                    error: function (jqXHR, statusText, err) {
+                        alert("Error occured: " + err);
+                    }
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Custom Ajax Converters</h2>       
+        <span id="output"></span>
+    </div>
+</body>
+</html>

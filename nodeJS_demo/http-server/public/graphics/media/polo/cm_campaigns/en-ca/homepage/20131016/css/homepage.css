@@ -1,0 +1,32 @@
+#cm_home{ width:960px; border:0px; position:relative;  }
+
+.hero1 {  position:absolute; top:290px; left: 635px; width: 95px; height: 16px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/SHOPNOW__WHT_CTA.png) no-repeat left 0px;}
+.hero1:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/SHOPNOW__WHT_CTA.png) no-repeat right 0px;}
+
+.hero2 { position:absolute; top:290px; left: 635px; width: 95px; height: 16px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/SHOPNOW__WHT_CTA.png) no-repeat left 0px;}
+.hero2:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/SHOPNOW__WHT_CTA.png) no-repeat right 0px;}
+
+.bucket { float: left; width: 315px; height: 292px; margin: 0 7px 0px 0px; position:relative; }
+
+.hpbucket1 { position:absolute; top:265px; left: 115px; width: 77px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SHOPNOW_CTA.png) no-repeat left 0px;}
+.hpbucket1:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SHOPNOW_CTA.png) no-repeat right 0px;}
+
+.hpbucket2 { position:absolute; top:265px; left: 69px; width: 180px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SCOSHA_CTA.png) no-repeat left 0px;}
+.hpbucket2:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SCOSHA_CTA.png) no-repeat right 0px;}
+
+.hpbucket3 { position:absolute; top:265px; left: 118px; width: 77px; height: 12px; background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SHOPNOW_CTA.png) no-repeat left 0px;}
+.hpbucket3:hover { background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/BKT_SHOPNOW_CTA.png) no-repeat right 0px;}
+
+
+#nav {height: 18px;	width: 960px; position: absolute;top: 589px;left: 0px;	text-align: center;	z-index: 10;				
+	    *background:transparent;
+	    background: rgba(255, 255, 255);
+	    background: rgba(255, 255, 255, 0.5);
+	    -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FFFFFFF,endColorstr=#7FFFFFFF)";
+	    *filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#7FFFFFFF,endColorStr=#7FFFFFFF);
+		}
+#nav a {position: relative; display: inline-block; margin: 0px 4px; width: 8px; height: 8px;overflow: hidden;					
+		    background: url(/graphics/media/polo/cm_campaigns/en-us/homepage/20131016/img/pagerdots.png) no-repeat 0px 0px; }
+#nav a.activeSlide {background-position: -22px 0px;	}
+
+

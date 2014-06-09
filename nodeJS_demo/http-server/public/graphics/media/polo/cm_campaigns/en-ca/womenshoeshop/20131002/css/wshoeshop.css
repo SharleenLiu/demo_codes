@@ -1,0 +1,98 @@
+    #feature-wrapper {
+        position: relative;
+        width: 760px;
+        }
+
+    .feature-slider {
+        position: relative;
+        }
+
+    .feature-slider,
+    .feature-slider .cycle,
+    .feature-slider .cycle .slide {
+        height: 541px;
+        }
+
+    .feature-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        }
+    
+    .feature-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 760px; 
+        position: relative;
+        top:0; 
+        left:0;
+        }
+
+         .feature-slider .slide .cta {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 50% 0px;
+            width: 100px;
+            height: 24px;
+            z-index: 2;
+            width: 225px;
+            height: 27px;
+            overflow: hidden;
+         }
+         .feature-slider .slide .cta:hover {
+            background-position: 50% -27px;
+         }
+         .feature-slider .slide1 .cta {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/Explore_CTA.png);
+            left: 130px;
+            top: 300px;
+         }
+         .feature-slider .slide2 .cta {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/Pumps_CTA.png);
+            left: -30px;
+            bottom: 10px;
+         }
+         .feature-slider .slide3 .cta {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/Booties_CTA.png);
+            left: -20px;
+            top: 20px;
+         }
+         .feature-slider .slide4 .cta {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/Sandals_CTA.png);
+            left: 50px;
+            top: 200px;
+         }
+         .feature-slider .slide5 .cta {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/Flats_CTA.png);
+            right: -50px;
+            bottom: 15px;
+         }
+	
+    .feature-slider .arrow {
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 63px;
+        margin-top: -31px;
+        vertical-align: middle;
+	    width: 25px;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+	    }
+
+    .feature-slider .arrow.prev        { background: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/left_arrow.png) no-repeat 0px 0px; left: 0px; }
+	.feature-slider .arrow.next        { background: url(/graphics/media/polo/cm_campaigns/en-ca/womenshoeshop/20131002/img/right_arrow.png) no-repeat 0px 0px; right: 0px; }
+    .feature-slider .arrow:hover { background-position: 0px -63px }
+    .feature-slider .arrow.disabled    { display: none !important; }
+    .feature-slider .pager             { display: none; }
+        
+    .clear { clear: both; }
+
+    .feature-slider .arrow {
+	    zoom: 1;
+	    *display: inline;
+	    }

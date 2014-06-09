@@ -1,0 +1,97 @@
+    #feature-wrapper {
+        position: relative;
+        width: 760px;
+        }
+
+    .feature-slider {
+        position: relative;
+        }
+
+    .feature-slider,
+    .feature-slider .cycle,
+    .feature-slider .cycle .slide {
+        height: 541px;
+        }
+
+    .feature-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        }
+    
+    .feature-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 3805px; 
+        position: relative;
+        top:0; 
+        left:0;
+        }
+
+         .feature-slider .slide .cta {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 50% 0px;
+            width: 100px;
+            z-index: 2;
+            width: 225px;
+            height: 20px;
+            overflow: hidden;
+         }
+         .feature-slider .slide .cta:hover {
+            background-position: 50% -20px;
+         }
+         .feature-slider .slide1 .cta.seemore {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/but_seemore.png);
+            left: 410px;
+            top: 330px;
+         }
+         .feature-slider .slide1 .cta.boots {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/but_boots.png);
+            left: 2830px;
+            bottom: 20px;
+         }
+         .feature-slider .slide1 .cta.dress {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/but_dress.png);
+            left: 1320px;
+            bottom: 20px;
+         }
+         .feature-slider .slide1 .cta.loafers {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/but_loafers.png);
+            left: 2070px;
+            bottom: 20px;
+         }
+         .feature-slider .slide1 .cta.sneakers {
+            background-image: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/but_sneakers.png);
+            right: -20px;
+            bottom: 20px;
+         }
+	
+    .feature-slider .arrow {
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 63px;
+        margin-top: -31px;
+        vertical-align: middle;
+	    width: 25px;
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+	    }
+
+    .feature-slider .arrow.prev        { background: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/left_arrow.png) no-repeat 0px 0px; left: 0px; }
+	.feature-slider .arrow.next        { background: url(/graphics/media/polo/cm_campaigns/en-us/menshoeshop/20131002/img/right_arrow.png) no-repeat 0px 0px; right: 0px; }
+    .feature-slider .arrow:hover { background-position: 0px -63px }
+    .feature-slider .arrow.disabled    { display: none !important; }
+    .feature-slider .pager             { display: none; }
+        
+    .clear { clear: both; }
+
+    .feature-slider .arrow {
+	    zoom: 1;
+	    *display: inline;
+	    }

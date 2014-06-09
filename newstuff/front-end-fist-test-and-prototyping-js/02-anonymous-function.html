@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using The End Function</title>  
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+     
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        //first define the function
+        function render(data) {
+            var $list = $("#list").empty();
+            $.each(data.people, function (index, person) {
+                $("<li />", {
+                        text: person.fullName
+                }).appendTo($list);
+            });
+        }
+
+            //avoid anonymous function which hard to get tested outside ajax call
+            $.ajax({
+                url: "/people",
+                success: render
+            });
+    </script>
+
+    <!--after run it, then test only render(following object), it can be rendered !
+        {people: [
+            {fullName: "Xiaohong Liu"},
+            {fullName: "Doug Johnson"},
+            {fullName: "Helen LaMere"}
+        ]}
+
+    -->
+</body>
+</html>

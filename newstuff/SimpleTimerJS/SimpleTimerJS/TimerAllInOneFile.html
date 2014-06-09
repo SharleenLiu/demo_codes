@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        body {}        
+        #timerContainer {width: 290px; height: 156px; }        
+        #timerSurface { width: 290px; height: 108px; background-color: #383431; }
+        #timerHeaders { height: 20px; }
+        #timerNumbers { text-align: center; font-family: Impact, sans-serif; font-size: 54px; color: #D0D0D0; }
+                
+        .HeaderText { float: left; height: 20px; padding: 5px 6px 5px 6px; text-align: center; font-family: sans-serif;
+            font-size: 14px; font-weight: bold; color: #D0D0D0; margin-left: 5px; }
+        .TimerText { float: left; height: 60px; padding: 5px 5px 5px 5px; border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000; background-color: #242323; margin-left: 5px; vertical-align: middle;
+            background-image: url(images/bg.png); }
+        
+        .NormalWidth { width: 68px; }        
+        .WideWidth { width: 100px; }        
+        .ButtonStart { background-image: url('images/start.png'); }
+        .ButtonPause { background-image: url('images/pause.png'); }
+        .ButtonClear { background-image: url('images/clear.png'); }
+        .Button { float: left; width: 68px; height: 68px; padding: 5px 5px 5px 5px; text-align: center; vertical-align: middle;
+            cursor: pointer; background-repeat: no-repeat; background-position: center; }
+        .Button:hover
+        {
+            -ms-transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -webkit-transition: -webkit-transform 0.3s ease-in;
+            -moz-transform: scale(1.05);
+            -moz-transition: -moz-transform 0.3s ease-in;
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            displayTimer();
+        };
+
+        var timerId = -1,
+        interval = 25,
+        ms = 0,
+        seconds = 0,
+        minutes = 0;
+
+        function startTimer() {
+            if (timerId === -1) {
+                timerId = window.setInterval("turnTimerOn()", interval);
+            }
+        };
+        function displayTimer() {
+            document.getElementById('milliseconds').innerHTML = ms;
+            document.getElementById('seconds').innerHTML = seconds;
+            document.getElementById('minutes').innerHTML = minutes;
+        };
+        function turnTimerOn() {
+            ms += interval;
+            if (ms >= 1000) {
+                ms = 0;
+                seconds += 1;
+            }
+            if (seconds >= 60) {
+                ms = 0;
+                seconds = 0;
+                minutes += 1;
+            }
+            displayTimer();
+        };
+        function pauseTimer() {
+            window.clearInterval(timerId);
+            timerId = -1;
+        };
+        function clearTimer() {
+            pauseTimer();
+            ms = 0;
+            seconds = 0;
+            minutes = 0;
+            displayTimer();
+        };
+    </script>
+    <title>Timer - All In One File</title>
+</head>
+<body>
+    <div id="timerContainer">
+        <div id="timerSurface">
+            <div id="timerHeaders">
+                <div class="HeaderText NormalWidth">
+                    MIN</div>
+                <div class="HeaderText NormalWidth">
+                    SEC</div>
+                <div class="HeaderText WideWidth">
+                    MS</div>
+            </div>
+            <div id="timerNumbers">
+                <div id="minutes" class="TimerText NormalWidth">
+                </div>
+                <div id="seconds" class="TimerText NormalWidth">
+                </div>
+                <div id="milliseconds" class="TimerText WideWidth">
+                </div>
+            </div>
+        </div>
+        <div id="buttonSurface" style="width: 236px; margin: auto;">
+            <div id="startButton" class="Button ButtonStart" onclick="startTimer();"></div>
+            <div id="pauseButton" class="Button ButtonPause" onclick="pauseTimer();"></div>
+            <div id="clearButton" class="Button ButtonClear" onclick="clearTimer();"></div>
+        </div>
+    </div>
+</body>
+</html>

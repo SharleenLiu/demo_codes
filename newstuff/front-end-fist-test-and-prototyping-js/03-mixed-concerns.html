@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using The End Function</title>  
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+     
+</head>
+<body>
+    <div id="numberOfPeople"></div>
+    <div id="lastPersonAdded"></div>
+    <script>
+        //seperation of concern
+        var people = {
+            list: [],
+            init: function () {
+                $(this).on("person.added", this.render.bind(this));
+            },
+            addAndRender: function (person) {
+                this.add(person);
+                this.render(person);
+            },
+            add: function (person) {
+                this.list.push(person);
+                $(this).trigger("person.added", [person]);
+            },
+            render: function (e, person) {
+                $("#numberOfPeople").html(this.list.length);
+                $("#lastPersonAdded").html(person.name);
+            }
+        };
+
+        people.init();
+        people.add({ name: "Smith Jr." });
+        people.add({ name: "Ping Wang." });
+
+        people.addAndRender({ name: "sally lee" });
+
+    </script>
+
+</body>
+</html>

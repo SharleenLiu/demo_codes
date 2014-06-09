@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Using Data Function</title>    
+    
+</head>
+<body>
+    <div>
+        <h2>Using Data Function</h2>       
+        <div id="container">
+            <table id="customersTable">
+                <tr>                
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>                    
+                </tr>
+                <tbody></tbody>
+            </table>
+            <br /><br />
+            <table id="ordersTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Product Title</th>
+                    <th>Total</th>                                        
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script> 
+    <script>
+        //customersService.getCustomers()
+//        $(document).ready(function () {
+//            getCustomers()
+//            .success(function (data) {
+//                var $trs = []; 
+//                for (var i = 0; i < data.d.length; i++) {
+//                    var cust = data.d[i];
+//                    var $tr = $("<tr>" + td(cust.ID) + td(cust.Name) + td(cust.Address) + td(cust.City) + "</tr>");
+//                    $trs.push($tr);
+//                }
+//                $("#customersTable tbody").append($trs.join(""););
+//            })
+//            .fail(function (jqXHR, statusText, err) {
+//                alert("Error occured: " + err);
+//            });
+//        });
+       
+        //okay
+//        var data = getCustomers();            
+//        var $trs = []; 
+//        for (var i = 0; i < data.length; i++) {
+//            var cust = data[i];
+//            var $tr = $("<tr>" + td(cust.ID) + td(cust.Name) + td(cust.Address) + td(cust.City) + "</tr>");
+//            $trs.push($tr);
+//        }
+//        $("#customersTable tbody").append($trs);
+
+
+        var data = getCustomers();
+        var $trs = [];
+        for (var i = 0; i < data.length; i++) {
+            var cust = data[i];
+            var $tr = $("<tr>" + td(cust.ID) + td(cust.Name) + td(cust.Address) + td(cust.City) + "</tr>");
+            $tr.data("orders", cust.Orders); //cache data!!!
+            $tr.click(showOrders);
+            $trs.push($tr);
+        }
+        $("#customersTable tbody").append($trs);
+
+        function showOrders() {
+            var $tbody = $("#ordersTable tbody");
+            $tbody.html("");
+            var orders = $(this).data("orders"); //retrieve cached data
+            var $trs = [];
+            for (var i = 0; i < orders.length; i++) {
+                var order = orders[i];
+                var $tr = $("<tr>" + td(order.ID) + td(order.ProdTitle) + td(order.Total) + "</tr>");
+                $trs.push($tr);
+            }
+            $tbody.append($tr);
+        }
+
+        function td(data) {
+            return "<td>" + data + "</td>";
+        }
+      
+        //should use services
+        function getCustomers() {
+            var custs = [];
+            for (var i = 0; i < 20; i++) {
+                var cust = {
+                    ID: i,
+                    Name: "John Smith",
+                    Address: "123 Main Street",
+                    City: "New York",
+                    Orders: "Some orders"     //should be collection or array               
+                };
+            custs.push(cust);
+            }
+            return custs;
+        }
+
+
+    </script>
+</body>
+</html>

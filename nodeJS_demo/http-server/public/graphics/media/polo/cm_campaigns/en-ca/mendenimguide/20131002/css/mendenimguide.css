@@ -1,0 +1,128 @@
+#feature-wrapper {
+        position: relative;
+        width: 760px;
+        }
+
+
+    /* ----- SLIDER ----- */
+    .feature-slider {
+        position: relative;
+        }
+
+    .feature-slider,
+    .feature-slider .cycle,
+    .feature-slider .cycle .slide {
+        height: 540px;
+        }
+
+    .feature-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        }
+    
+    .feature-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 760px; 
+        top:0; 
+        left:0;
+        }
+	
+    .feature-slider .arrow {
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 63px;
+        margin-top: -32px;
+        vertical-align: middle;
+	    width: 25px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        z-index: 2;
+	    }
+
+    .feature-slider .arrow.prev        { background: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/left_arrow.png) no-repeat 0px 0px; left: 0px; }
+	.feature-slider .arrow.next        { background: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/right_arrow.png) no-repeat 0px 0px; right: 0px; }
+    .feature-slider .arrow:hover        { background-position: 0px -63px;}
+    .feature-slider .arrow.disabled    { display: none !important; }
+    .feature-slider .pager             { display: none; }
+        
+    .clear { clear: both; }
+
+    .feature-slider .arrow {
+	    zoom: 1;
+	    *display: inline;
+	    }
+
+
+    /* ----- LINKS ----- */
+
+     .links-slide {
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        overflow: hidden;
+     }
+        .links-slide li {
+            margin: 0px 4px 0px 4px;
+            padding: 0px;
+            float: left;
+        }
+            .links-slide li a {
+                display: block;
+                height: 19px;
+                background-repeat: no-repeat;
+                background-position: 0px -19px;
+            }
+            .links-slide li a:hover,
+             .links-slide li a.active {
+                background-position: 0px 0px;
+            }
+            .link-slim {
+                width: 29px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/SLIMSTRAIGHT_CTA.png);
+            }
+            .link-slimstraight {
+                width: 95px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/SLIMSTRAIGHT_CTA.png);
+            }
+        .coverlink {
+            position: absolute;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: 50% 0px;
+            overflow: hidden;
+            height: 34px;
+            width: 175px;
+        }
+        .coverlink:hover {
+            background-position: 50% -34px;
+        }
+            .coverlink.slim {
+                right: 75px;
+                top: 325px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/COVER_SLIM_CTA.png);
+            }
+            .coverlink.slimstraight {
+                right: 73px;
+                top: 380px;
+                background-image: url(/graphics/media/polo/cm_campaigns/en-ca/mendenimguide/20131002/img/COVER_SLIMSTRAIGHT_CTA.png);
+            }
+    #slide1 .links-slide {
+        left: 420px;
+        top: 250px;
+    }
+    #slide2 .links-slide {
+        left: 78px;
+        top: 330px;
+    }
+    #slide3 .links-slide {
+        left: 78px;
+        top: 330px;
+    }

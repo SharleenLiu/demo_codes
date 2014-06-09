@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rlworldwideModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="rlworldwideModelStoreContainer">
+    <EntitySet Name="icg_marketing_data" EntityType="rlworldwideModel.Store.icg_marketing_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="icg_marketing_data_sitenum" EntityType="rlworldwideModel.Store.icg_marketing_data_sitenum" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="icg_marketing_data_supplement" EntityType="rlworldwideModel.Store.icg_marketing_data_supplement" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_icg_marketing_data_supplement_icg_marketing_data" Association="rlworldwideModel.Store.FK_icg_marketing_data_supplement_icg_marketing_data">
+      <End Role="icg_marketing_data" EntitySet="icg_marketing_data" />
+      <End Role="icg_marketing_data_supplement" EntitySet="icg_marketing_data_supplement" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="icg_marketing_data">
+    <Key>
+      <PropertyRef Name="icg_cap_id" />
+    </Key>
+    <Property Name="icg_cap_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="icg_cap_site" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_email" Type="nvarchar" MaxLength="75" />
+    <Property Name="icg_cap_prefix" Type="nvarchar" MaxLength="75" />
+    <Property Name="icg_cap_fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_address1" Type="nvarchar" MaxLength="75" />
+    <Property Name="icg_cap_address2" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_address3" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_city" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_state" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_province" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_zip" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_country" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_mphone" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_hphone" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_ccode" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_age" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="icg_cap_optdot" Type="tinyint" />
+    <Property Name="icg_cap_opthome" Type="tinyint" />
+    <Property Name="icg_cap_optrun" Type="tinyint" />
+    <Property Name="icg_cap_optrlg" Type="tinyint" />
+    <Property Name="icg_cap_optrgb" Type="tinyint" />
+    <Property Name="icg_cap_shopdot" Type="tinyint" />
+    <Property Name="icg_cap_shopprl" Type="tinyint" />
+    <Property Name="icg_cap_shopfoa" Type="tinyint" />
+    <Property Name="icg_cap_shopdept" Type="tinyint" />
+    <Property Name="icg_cap_opt_prodesigner" Type="tinyint" />
+    <Property Name="icg_cap_opt_procontractor" Type="tinyint" />
+    <Property Name="icg_cap_hhear" Type="varchar" MaxLength="50" />
+    <Property Name="icg_cap_sms_sent" Type="tinyint" />
+    <Property Name="icg_cap_addate" Type="datetime" />
+    <Property Name="icg_cap_UpdateDT" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6035: The relationship 'FK_icg_marketing_data_icg_marketing_data_sitenum' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+  <EntityType Name="icg_marketing_data_sitenum">
+    <Key>
+      <PropertyRef Name="icg_cap_num_id" />
+    </Key>
+    <Property Name="icg_cap_num_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="icg_cap_number" Type="int" Nullable="false" />
+    <Property Name="icg_cap_site" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="icg_marketing_data_supplement">
+    <Key>
+      <PropertyRef Name="icg_cap_Supplement_id" />
+    </Key>
+    <Property Name="icg_cap_Supplement_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="icg_cap_id" Type="int" Nullable="false" />
+    <Property Name="icg_cap_RegisterforNews" Type="bit" Nullable="false" />
+    <Property Name="icg_cap_Current_RL_customer" Type="bit" Nullable="false" />
+    <Property Name="icg_cap_RL_Store" Type="varchar" MaxLength="1024" />
+    <Property Name="icg_cap_Subject" Type="varchar" MaxLength="50" />
+    <Property Name="icg_cap_Message" Type="varchar" MaxLength="4000" />
+    <Property Name="icg_cap_HeardAboutUs" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <Association Name="FK_icg_marketing_data_supplement_icg_marketing_data">
+    <End Role="icg_marketing_data" Type="rlworldwideModel.Store.icg_marketing_data" Multiplicity="1" />
+    <End Role="icg_marketing_data_supplement" Type="rlworldwideModel.Store.icg_marketing_data_supplement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="icg_marketing_data">
+        <PropertyRef Name="icg_cap_id" />
+      </Principal>
+      <Dependent Role="icg_marketing_data_supplement">
+        <PropertyRef Name="icg_cap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="usp_SaveMarketingCapture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="icg_cap_site" Type="varchar" Mode="In" />
+    <Parameter Name="prefix" Type="varchar" Mode="In" />
+    <Parameter Name="firstName" Type="varchar" Mode="In" />
+    <Parameter Name="lastName" Type="varchar" Mode="In" />
+    <Parameter Name="emailAddress" Type="varchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="address1" Type="varchar" Mode="In" />
+    <Parameter Name="address2" Type="varchar" Mode="In" />
+    <Parameter Name="city" Type="varchar" Mode="In" />
+    <Parameter Name="state" Type="char" Mode="In" />
+    <Parameter Name="country" Type="varchar" Mode="In" />
+    <Parameter Name="register" Type="bit" Mode="In" />
+    <Parameter Name="isCustomer" Type="bit" Mode="In" />
+    <Parameter Name="subject" Type="varchar" Mode="In" />
+    <Parameter Name="message" Type="varchar" Mode="In" />
+    <Parameter Name="rl_store" Type="varchar" Mode="In" />
+    <Parameter Name="heardAboutUs" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

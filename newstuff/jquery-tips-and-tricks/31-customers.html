@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customers</title>    
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="content-wrapper">
+        <a id="GetCustomers" href="#">Get Customers</a>
+        <a id="UpdateCustomer" href="#">Update Customer</a>
+        <a id="InsertCustomer" href="#">Insert Customer</a>
+        <a id="DeleteCustomer" href="#">Delete Customer</a>
+        <a id="GetCustomerOrders" href="#">Get Customer Orders</a>
+        <a id="GetCustomerJSONP" href="#">Get Customer via JSONP</a>
+
+        <br />
+        <h4>Customers:</h4>
+        <ul id="CustomersContainer"></ul>
+
+        <h5>Orders:</h5>
+        <ul id="OrdersContainer"></ul>
+        <br />
+        <div id="OutputDiv"></div>
+    </div>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>    
+    <script src="js/customersPage.js" type="text/javascript"></script>
+    <script src="js/dataService.js" type="text/javascript"></script>
+    <script>
+        customersPage.init();
+    </script>
+</body>
+</html>

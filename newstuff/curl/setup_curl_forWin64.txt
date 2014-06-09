@@ -1,0 +1,40 @@
+
+
+https://npmjs.org/package/http-server
+hong6
+mycomxxxxxX
+
+cmd.exe
+curl http://npmjs.org/install.sh | sh
+
+did this
+curl http://npmjs.org/install.sh
+
+
+How to Setup curl on Windows 7 64-bit
+
+http://curl.download.nextag.com/download/curl-7.21.7-win64-ssl-sspi.zip  
+
+https://support.gradesfirst.com/entries/20398251-How-to-Setup-cURL-on-Windows-7-64-bit
+
+
+Setup curl on Windows 7 64-bit
+
+Setup curl:
+
+Download and unzip 64-bit cURL with SSL: http://curl.download.nextag.com/download/curl-7.21.7-win64-ssl-sspi.zip  
+Copy the curl.exe file into your Windows PATH folder. By default, this is C:\Windows\System32.
+Download and install the Visual Studio 2010 C++ Runtime Redistributable 64 bit here: http://www.microsoft.com/download/en/details.aspx?id=13523
+Download the latest bundle of Certficate Authority Public Keys from mozilla.org: http://curl.haxx.se/ca/cacert.pem
+Rename this file from cacert.pem to curl-ca-bundle.crt.
+Move this file into your Windows PATH folder. By default, this is C:\\Windows\System32.
+Test it:
+
+Run cmd.exe to open your command prompt.
+type curl -L http://www.google.com
+type curl -L https://www.google.com
+For both commands, you should see a couple pages of the HTML source code. If you see this, cURL is up and running!
+
+C:\Users\xliu>curl -L http://localhost:3000/customer/details/2
+
+http://stackoverflow.com/questions/9507353/steps-to-setup-curl-in-windows

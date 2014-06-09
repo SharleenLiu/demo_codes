@@ -1,0 +1,164 @@
+img {border:none;}
+.clear { clear: both;}
+#cc-cultureclub{ width: 960px; margin:0 auto} 
+#cc_toparea { overflow: hidden; } 
+#cc-tumblr { height:272px; padding-left:7px; margin-top:10px; }
+#cc-pinterest {margin-top:25px; position:relative;}
+
+    #cc_title {
+        float: left;
+        width: 308px;
+    }
+    #cc_hero {
+        float: left;
+        width: 652px;
+    }
+    #cc_hero a {
+        background-position: 0 0;
+        display: block;
+        height: 475px;
+        width: 326px;
+        float:left;
+    }
+    #cc_hero a:hover {
+       background-position:326px 0;
+    }
+    
+
+    #cc_gallery_container {
+        border: 1px solid #cfcfcf;
+        position: relative;
+        width: 958px;
+        margin: 3px 0px 25px;
+        height: 298px;
+        float: left;
+    }
+    #cc_gallery {
+        overflow-y: hidden;
+        overflow-x: scroll;
+        position: relative;
+    }
+    #cc_gallery_title { width: 960px; height:59px;
+        /*margin-bottom: -5px;*/
+    }    
+    
+    #scroller {
+        width:2870px; 
+	    height:247px;
+    }
+    #cc_gallery .cc_experts {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+    #cc_gallery .cc_experts li {
+        float: left;
+        width: 232px;
+        height: 231px;
+        background: #ccc;
+        margin: 0px 0px 7px 7px;
+        padding: 0px;
+    }
+        #cc_gallery .cc_experts a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-position: 0px 0px;
+        }
+        #cc_gallery .cc_experts a:hover {
+            background-position: 0px -231px;
+        }
+        #cc_gallery .myScrollbarH {
+	        position:absolute;
+	        z-index:100;
+	        height:14px;
+	        bottom:0px;
+            background: #bebebe;
+            width: 100%;
+            -webkit-border-radius:7px;
+	        -moz-border-radius:7px;
+	        -o-border-radius:7px;
+	        border-radius:7px;
+        }
+        #cc_gallery .myScrollbarH > div {
+	        position:absolute;
+            top: 1px;
+	        z-index:100;
+	        height:12px;
+	      
+	        background: #494949;
+	        -webkit-background-clip:padding-box;
+	        -moz-background-clip:padding-box;
+	        -o-background-clip:padding-box;
+	        background-clip:padding-box;
+	
+	        -webkit-box-sizing:border-box;
+	        -moz-box-sizing:border-box;
+	        -o-box-sizing:border-box;
+	        box-sizing:border-box;
+	
+	        -webkit-border-radius:6px;
+	        -moz-border-radius:6px;
+	        -o-border-radius:6px;
+	        border-radius:6px;
+        }
+  
+        .pinterestlink {
+            position: relative;
+            display: block;
+        } 
+         .pinterestlink .but_followus {
+                position: absolute; z-index:20;
+                top: 40px;
+                left: 424px;
+                width: 112px;
+                height: 10px;               
+                background: url(/graphics/media/polo/cm_campaigns/en-us/cultureclub/20140108/img/11_CCLP_PTRST_BTN.png) no-repeat 0px 0px;                
+            }
+            .pinterestlink:hover .but_followus {
+                background-position: 0px bottom;
+            }
+      
+        
+.social-media-wrapper { position:relative; width:960px; height:471px; margin-top:20px; padding-left:15px; }
+.social-media-wrapper .section { float:left; width:460px; height:420px; }        
+.social-media-wrapper div.separator { float: left; height: 469px; border: Solid 1px black; }
+.social-media-wrapper .clip {border-top:solid 1px #d8dfea; width:454px; }
+.coverbar { position: absolute; width: 18px; height:325px; top: 70px; left:930px; z-index:10; background-color: #ffffff; }
+
+.hd_twitter { position:relative; width:460px; height:58px; padding-top:11px; }
+.hd_twitter span { position:absolute; top:12px; left:53px; width:400px; height:38px; color:#008cc2; }
+
+
+.cc-lp-blog { width:960px; height:200px;}
+div.bloglp-image-container
+{
+    display:inline;
+    float:left;
+    width:235px;
+    height:200px;    
+    margin-right:1px;
+    margin-bottom:1px;
+    overflow:hidden;
+    /*background-color: rgb(0, 0, 0);*/
+}
+
+div.bloglp-image-container .blog-image
+{
+    display:inline;
+    width:235px;
+    height:200px;
+}
+
+div.bloglp-image-container .blog-image:hover
+{
+   cursor:pointer;
+   border: Solid 1px #FFF;
+   text-align:center;
+   opacity: 0.6; /* Safari, Opera */
+   -moz-opacity:0.60; /* FireFox */
+   filter: alpha(opacity=60); /* IE */
+   color:#FFF;
+}
+

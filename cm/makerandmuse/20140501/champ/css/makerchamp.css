@@ -1,0 +1,196 @@
+
+/* START - this probably in GSI page already */
+body {
+color: #000000;
+font-family: Verdana,Arial,sans-serif;
+}
+button, input.button, a.button, a.button:link, a.button:visited, a.button:hover, button.button-blk, input.button-blk, a.button-blk, a.button-blk:link, a.button-blk:visited, a.button-blk:hover, button.button-blk2, input.button-blk2, a.button-blk2, a.button-blk2:link, a.button-blk2:visited, a.button-blk2:hover, button.button-nf, input.button-nf, a.button-nf, a.button-nf:link, a.button-nf:visited, a.button-nf:hover, a.proceed_to_shopping, a.proceed_to_shopping:link, a.proceed_to_shopping:visited, a.button-nf:hover {
+font: normal 11px/11px Georgia,"Times New Roman",Times,serif;
+border: 1px solid #b2b2b2;
+background-color: #fff;
+color: #000!important;
+text-transform: uppercase;
+margin: 0;
+padding: 7px 9px;
+text-decoration: none;
+display: inline-block;
+zoom: 1;
+overflow: visible!important;
+cursor: pointer;
+}
+button:hover, a.button:hover {
+border-color: #ccc!important;
+text-decoration: none!important;
+}
+/* END - this probably in GSI page already */
+
+img { border: none;}
+#cc-mam-wrapper { width:960px; margin:0 auto; }
+#cc-mam-content { float: left; padding-top: 40px; width: 724px; }
+#cc-makergrid { width: 724px; height:541px; }
+.refinement{ width: 724px; height:40px; position:relative; }
+.refinement h5{ position:absolute; top:0px; left:0px; width:660px;  }
+.refinement .button{ position:absolute; top:25px; left:640px; width:60px;}
+#cc-makergrid ol#cc-products { margin: 30px 0 0 0; padding-left:10px; width:760px; height:481px; list-style: none; overflow: hidden; }
+ol#cc-products li.product { float: left; vertical-align: top; width: 181px; height: 240px; }
+ol#cc-products li .product-details {font-size: 12px; line-height: 16px; height: 76px; font-family: georgia, times, serif; text-align:center;}
+ol#cc-products li .product-details a { text-decoration: none; color: #383838;}
+ol#cc-products li .product-details-a { padding: 6px 0 4px; }
+ol#cc-products li .product-details-a a:hover {font-weight: 700;}
+
+/*--------------------------*/ 
+    
+    .cc-mam-profile {
+        color: #000;
+        font-family: Georgia, Times New Roman, Serif;
+        padding: 0px;
+        }
+    
+    .cc-mam-profile h2 {
+        font-size: 20px;
+        font-weight: normal;
+        margin: 0 0 15px 0;
+        padding: 0;
+        }
+    
+    .cc-mam-profile .cc-bodycopy {
+        font-size: 12px;
+        font-style: italic;
+        }
+        
+     .cc-mam-profile .cc-bodycopy p {
+        line-height: 24px;
+        margin: 0 0 15px 0;
+        }
+
+    .cc-mam-slider {
+        position: relative;
+        }
+
+    .cc-mam-slider .cycle,
+    .cc-mam-slider .cycle .slide {
+        height: 449px;
+        }
+    
+    .cc-mam-slider .cycle {
+        margin:0;
+        overflow: hidden;
+        padding:0;
+        position: relative;
+        width: 100%; 
+        }
+    
+    .cc-mam-slider .cycle .slide {
+        background-color: #000;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        width: 723px; 
+        position: absolute;
+        top:0; 
+        left:0;
+        }
+    
+    .cc-mam-slider .controls {
+        padding-top: 15px;
+        text-align: center;
+	    }
+	
+    .cc-mam-slider .arrow {
+        background: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/sprite_controls.png) no-repeat 0px 0px;
+	    cursor: pointer;
+	    display: inline-block;
+	    height: 24px;
+        vertical-align: middle;
+	    width: 13px;
+	    }
+
+    .cc-mam-slider .arrow.disabled    { cursor: default; }
+	
+    .cc-mam-slider .arrow.prev             { background-position: -35px 0px; }
+    .cc-mam-slider #prev-item.disabled     { background-position: -75px 0px; }
+	.cc-mam-slider .arrow.next             { background-position: -57px 0px; }
+	.cc-mam-slider #next-item.disabled     { background-position: -97px 0px; }
+
+    .cc-mam-slider .pager { padding: 0 10px; }
+
+    .cc-mam-slider .pager a {
+        background: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/sprite_controls.png) no-repeat 0px 0px;
+        display: inline-block;
+        height: 10px;
+        margin: 0 2px;
+        text-indent: -9999px;
+        vertical-align: middle;
+        width: 11px;
+        }
+
+    .cc-mam-slider .pager a:hover,
+    .cc-mam-slider .pager a.activeSlide { background-position: -15px 0px; }
+        
+    .clear { clear: both; }
+
+    .cc-mam-slider .arrow,
+    .cc-mam-slider .pager a {
+	    zoom: 1;
+	    *display: inline;
+	    }
+    
+    
+    /*bellow in body before */ 
+    #cc-mam-sidebar {
+        background: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CC_Detail_Nav.jpg) no-repeat 0 0;
+        display: none;
+        float: left;
+        position: relative;
+        height: 1224px;
+        width: 236px;
+        }
+
+   #cc-mam-sidebar .mam-thumbs {
+        padding: 190px 0 0 25px;
+        }
+
+    #cc-mam-sidebar .navitem {
+        display: block;
+        height: 64px;
+        margin-bottom: 0px;
+        width: 177px;
+        }
+        
+    #cc-mam-sidebar .navitem .thumb {
+        background: transparent 0 0 no-repeat;
+        display: block;
+        height: 55px;
+        width: 55px;
+        }
+
+    #cc-mam-sidebar .navitem:hover .thumb,
+    #cc-mam-sidebar .navitem.on .thumb {
+        background-position: -3px -3px;
+        border: 3px solid #fff;
+        height: 48px;
+        width: 48px;
+        }
+
+    #cc-mam-sidebar .navitem.on {
+        cursor: default;
+        }
+        
+    #cc-mam-sidebar .navitem#item-champ .thumb    { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_01.gif); }
+    #cc-mam-sidebar .navitem#item-patmos .thumb      { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_02.gif); }
+    #cc-mam-sidebar .navitem#item-mayle .thumb         { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_03.gif); }
+    #cc-mam-sidebar .navitem#item-morais .thumb      { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_04.gif); }
+    #cc-mam-sidebar .navitem#item-scosha .thumb       { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_05.gif); }
+    #cc-mam-sidebar .navitem#item-campbell .thumb       { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_06.gif); }
+    #cc-mam-sidebar .navitem#item-mcnairy .thumb       { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_07.gif); }
+    #cc-mam-sidebar .navitem#item-rodriguez .thumb     { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_08.gif); }
+    #cc-mam-sidebar .navitem#item-selima .thumb        { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_09.gif); }
+    #cc-mam-sidebar .navitem#item-alexander .thumb     { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_10.gif); }
+    #cc-mam-sidebar .navitem#item-scribe .thumb        { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_11.gif); }
+    #cc-mam-sidebar .navitem#item-coveteur .thumb      { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_12.gif); }
+    #cc-mam-sidebar .navitem#item-rancourt .thumb      { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_13.gif); }
+    #cc-mam-sidebar .navitem#item-pierce .thumb        { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_15.gif); }
+    #cc-mam-sidebar .navitem#item-harrington .thumb    { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_16.gif); }
+    #cc-mam-sidebar .navitem#item-erickson .thumb      { background-image: url(/graphics/media/polo/cm_campaigns/en-us/makerandmuse/20140501/champ/img/12_CultureClub_Nav_17.gif); }
+
+    #cc-mam-sidebar .text { display: none; }
+

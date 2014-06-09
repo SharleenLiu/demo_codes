@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Responsive Image Maps - call to popups - draggable slides</title>
+	<!--<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />-->
+	<meta name="viewport" content="width=device-width"/>   
+    <link href="jquery.fancybox-1.3.4.css" rel="stylesheet" />
+	<style>
+	    body { font-family: Helvetica, Arial, sans-serif;	}
+	    h1 {font-size: 20px;}
+	    div {width: 100%;}
+	    img[usemap] {
+		    border: none;
+		    height: auto;
+		    max-width: 100%;
+		    width: auto;
+	    }
+	    /*.hotspot {
+	        position: absolute;
+	        cursor: pointer;
+	        left: 400px;
+	        top: 200px;
+	        border: 1px solid #AA0000;
+	    }*/   
+	</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>    
+    <script src="jquery.fancybox-1.3.4.js"></script>
+    <script src="jquery.rwdImageMaps.min.js"></script>
+    <script>
+        jQuery(document).ready(function (e) {
+            jQuery('img[usemap]').rwdImageMaps();
+
+            //$('area').on('click', function () {
+            //    alert($(this).attr('alt') + ' clicked');
+            //});
+
+            jQuery('map > area.fancybox').on('click', function (e) {
+                e.preventDefault();
+                var url = jQuery(this).attr('href');
+                var title = jQuery(this).attr('title');
+                var type = jQuery(this).attr('rel');
+                var tW = 940, tH = 547;
+
+                if (url == 'StoreListEU.html') {
+                    tW = 474;
+                    tH = 408;
+                }
+                else if (url == 'popupone.html') {
+                    tW = 960;
+                    tH = 567;
+                }
+
+                jQuery.fancybox(this, {
+                //$('.fancybox').fancybox({
+                    //'title': title,
+                    //'titlePosition': 'inside',
+                    'href': url,
+                    'type': type,
+                    'overlayColor': '#000',
+                    'overlayOpacity': 0.6,
+                    'titleShow': false,
+                    'showCloseButton': false,
+                    'width': tW,
+                    'height': tH,
+                    'autoScale': false,
+                    'autoDimensions': false,
+                    'centerOnScroll': true,
+                    'transitionIn': 'fade',
+                    'transitionOut': 'fade'
+                    //'type': 'iframe'
+                });             
+
+            });
+           
+        });
+    </script>
+</head>
+<body>
+<div>
+	<h1>call to popups - Responsive Image Maps jQuery Plugin</h1>
+	<!--<a class="fancybox" href="popupone.html" title="">pop it up 1</a>
+    <a class="hotspot fancybox"  href="popuptwo_dragable.html" title="">pop it up 2</a>-->
+					  
+    <img id="content1" src="images/content1.jpg" width="2273" height="1171" usemap="#img2273x1171" alt="" />
+    <img id="content2" src="images/content2.jpg" width="2273" height="1171" usemap="#" alt="" />
+   
+    <map name="img2273x1171" id="img2273x1171">
+        <area class="fancybox" href="popuptwo_dragable.html" rel="iframe" alt="belt" title="belt" shape="poly" coords="235, 209, 277, 144, 307, 62, 556, 22, 589, 100, 641, 148, 655, 363, 747, 622, 864, 951, 457, 944, 331, 590, 235, 564" />
+        <area class="fancybox" href="popupone.html" rel="iframe" alt="big circle" title="big circle" shape="circle" coords="1915, 549, 188" />
+        <area class="fancybox" href="StoreListEU.html" rel="iframe" alt="small circle" title="small circle" shape="circle" coords="1682, 765, 34" />
+        <area class="fancybox" href="images/legion.jpg" rel="image" alt="meddium circle" title="meddium circle" shape="circle" coords="1579, 346, 38" />    
+    </map>   
+</div>
+</body>
+</html>

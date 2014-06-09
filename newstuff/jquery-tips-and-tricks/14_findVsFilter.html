@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>find vs filter</title>  
+    <script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $("#showButton").click(function () {
+                var $names = $("#people li");
+                var $output = $("#output");
+                //var $pubs = $names.find(".publisher"); - find nothing, children
+                var $pubs = $names.filter(".publisher"); //- same level
+
+                if ($pubs.length) {
+                    var html = "";
+                    $pubs.each(function () {
+                        html += "<li>" + $(this).text() + "</li>";
+                    });
+                    $output.append(html);
+                }
+                else {
+                    $output.append("<li>No pubs found</li>");
+                }
+            });
+        });
+    </script> 
+</head>
+<body>
+    <div class="content-wrapper">
+        <button id="showButton">Show Pubs</button>
+        <ul id="people">
+            <li class="publisher">Xiaohong Liu</li>
+            <li class="publisher">Roger Hammernik</li>
+            <li>Aaron Johnson</li>
+            <li>Helen Gilbert</li>
+            <li>Penny Smith</li>
+        </ul>
+        <h2>Pubs</h2>
+        <ul id="output"></ul>
+    </div>
+</body>
+</html>

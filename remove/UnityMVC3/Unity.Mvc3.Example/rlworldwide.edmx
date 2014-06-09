@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="rlworldwideModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="rlworldwideModelStoreContainer">
+          <EntitySet Name="icg_marketing_data" EntityType="rlworldwideModel.Store.icg_marketing_data" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="icg_marketing_data_sitenum" EntityType="rlworldwideModel.Store.icg_marketing_data_sitenum" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="icg_marketing_data_supplement" EntityType="rlworldwideModel.Store.icg_marketing_data_supplement" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_icg_marketing_data_supplement_icg_marketing_data" Association="rlworldwideModel.Store.FK_icg_marketing_data_supplement_icg_marketing_data">
+            <End Role="icg_marketing_data" EntitySet="icg_marketing_data" />
+            <End Role="icg_marketing_data_supplement" EntitySet="icg_marketing_data_supplement" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="icg_marketing_data">
+          <Key>
+            <PropertyRef Name="icg_cap_id" />
+          </Key>
+          <Property Name="icg_cap_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_site" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_email" Type="nvarchar" MaxLength="75" />
+          <Property Name="icg_cap_prefix" Type="nvarchar" MaxLength="75" />
+          <Property Name="icg_cap_fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_address1" Type="nvarchar" MaxLength="75" />
+          <Property Name="icg_cap_address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_address3" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_city" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_province" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_zip" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_country" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_mphone" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_hphone" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_ccode" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_age" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="icg_cap_optdot" Type="tinyint" />
+          <Property Name="icg_cap_opthome" Type="tinyint" />
+          <Property Name="icg_cap_optrun" Type="tinyint" />
+          <Property Name="icg_cap_optrlg" Type="tinyint" />
+          <Property Name="icg_cap_optrgb" Type="tinyint" />
+          <Property Name="icg_cap_shopdot" Type="tinyint" />
+          <Property Name="icg_cap_shopprl" Type="tinyint" />
+          <Property Name="icg_cap_shopfoa" Type="tinyint" />
+          <Property Name="icg_cap_shopdept" Type="tinyint" />
+          <Property Name="icg_cap_opt_prodesigner" Type="tinyint" />
+          <Property Name="icg_cap_opt_procontractor" Type="tinyint" />
+          <Property Name="icg_cap_hhear" Type="varchar" MaxLength="50" />
+          <Property Name="icg_cap_sms_sent" Type="tinyint" />
+          <Property Name="icg_cap_addate" Type="datetime" />
+          <Property Name="icg_cap_UpdateDT" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'FK_icg_marketing_data_icg_marketing_data_sitenum' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="icg_marketing_data_sitenum">
+          <Key>
+            <PropertyRef Name="icg_cap_num_id" />
+          </Key>
+          <Property Name="icg_cap_num_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_number" Type="int" Nullable="false" />
+          <Property Name="icg_cap_site" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="icg_marketing_data_supplement">
+          <Key>
+            <PropertyRef Name="icg_cap_Supplement_id" />
+          </Key>
+          <Property Name="icg_cap_Supplement_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_id" Type="int" Nullable="false" />
+          <Property Name="icg_cap_RegisterforNews" Type="bit" Nullable="false" />
+          <Property Name="icg_cap_Current_RL_customer" Type="bit" Nullable="false" />
+          <Property Name="icg_cap_RL_Store" Type="varchar" MaxLength="1024" />
+          <Property Name="icg_cap_Subject" Type="varchar" MaxLength="50" />
+          <Property Name="icg_cap_Message" Type="varchar" MaxLength="4000" />
+          <Property Name="icg_cap_HeardAboutUs" Type="varchar" MaxLength="4000" />
+        </EntityType>
+        <Association Name="FK_icg_marketing_data_supplement_icg_marketing_data">
+          <End Role="icg_marketing_data" Type="rlworldwideModel.Store.icg_marketing_data" Multiplicity="1" />
+          <End Role="icg_marketing_data_supplement" Type="rlworldwideModel.Store.icg_marketing_data_supplement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="icg_marketing_data">
+              <PropertyRef Name="icg_cap_id" />
+            </Principal>
+            <Dependent Role="icg_marketing_data_supplement">
+              <PropertyRef Name="icg_cap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="usp_SaveMarketingCapture" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="icg_cap_site" Type="varchar" Mode="In" />
+          <Parameter Name="prefix" Type="varchar" Mode="In" />
+          <Parameter Name="firstName" Type="varchar" Mode="In" />
+          <Parameter Name="lastName" Type="varchar" Mode="In" />
+          <Parameter Name="emailAddress" Type="varchar" Mode="In" />
+          <Parameter Name="phoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="address1" Type="varchar" Mode="In" />
+          <Parameter Name="address2" Type="varchar" Mode="In" />
+          <Parameter Name="city" Type="varchar" Mode="In" />
+          <Parameter Name="state" Type="char" Mode="In" />
+          <Parameter Name="country" Type="varchar" Mode="In" />
+          <Parameter Name="register" Type="bit" Mode="In" />
+          <Parameter Name="isCustomer" Type="bit" Mode="In" />
+          <Parameter Name="subject" Type="varchar" Mode="In" />
+          <Parameter Name="message" Type="varchar" Mode="In" />
+          <Parameter Name="rl_store" Type="varchar" Mode="In" />
+          <Parameter Name="heardAboutUs" Type="varchar" Mode="In" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="rlworldwideModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="rlworldwideEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="icg_marketing_data" EntityType="rlworldwideModel.icg_marketing_data" />
+          <EntitySet Name="icg_marketing_data_sitenum" EntityType="rlworldwideModel.icg_marketing_data_sitenum" />
+          <EntitySet Name="icg_marketing_data_supplement" EntityType="rlworldwideModel.icg_marketing_data_supplement" />
+          <AssociationSet Name="FK_icg_marketing_data_supplement_icg_marketing_data" Association="rlworldwideModel.FK_icg_marketing_data_supplement_icg_marketing_data">
+            <End Role="icg_marketing_data" EntitySet="icg_marketing_data" />
+            <End Role="icg_marketing_data_supplement" EntitySet="icg_marketing_data_supplement" />
+          </AssociationSet>
+          <FunctionImport Name="usp_SaveMarketingCapture">
+            <Parameter Name="icg_cap_site" Mode="In" Type="String" />
+            <Parameter Name="prefix" Mode="In" Type="String" />
+            <Parameter Name="firstName" Mode="In" Type="String" />
+            <Parameter Name="lastName" Mode="In" Type="String" />
+            <Parameter Name="emailAddress" Mode="In" Type="String" />
+            <Parameter Name="phoneNumber" Mode="In" Type="String" />
+            <Parameter Name="address1" Mode="In" Type="String" />
+            <Parameter Name="address2" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="country" Mode="In" Type="String" />
+            <Parameter Name="register" Mode="In" Type="Boolean" />
+            <Parameter Name="isCustomer" Mode="In" Type="Boolean" />
+            <Parameter Name="subject" Mode="In" Type="String" />
+            <Parameter Name="message" Mode="In" Type="String" />
+            <Parameter Name="rl_store" Mode="In" Type="String" />
+            <Parameter Name="heardAboutUs" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="icg_marketing_data">
+          <Key>
+            <PropertyRef Name="icg_cap_id" />
+          </Key>
+          <Property Name="icg_cap_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_site" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_email" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_prefix" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_fname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_address1" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_address3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_province" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_mphone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_hphone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_ccode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_age" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_gender" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="icg_cap_optdot" Type="Byte" />
+          <Property Name="icg_cap_opthome" Type="Byte" />
+          <Property Name="icg_cap_optrun" Type="Byte" />
+          <Property Name="icg_cap_optrlg" Type="Byte" />
+          <Property Name="icg_cap_optrgb" Type="Byte" />
+          <Property Name="icg_cap_shopdot" Type="Byte" />
+          <Property Name="icg_cap_shopprl" Type="Byte" />
+          <Property Name="icg_cap_shopfoa" Type="Byte" />
+          <Property Name="icg_cap_shopdept" Type="Byte" />
+          <Property Name="icg_cap_opt_prodesigner" Type="Byte" />
+          <Property Name="icg_cap_opt_procontractor" Type="Byte" />
+          <Property Name="icg_cap_hhear" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="icg_cap_sms_sent" Type="Byte" />
+          <Property Name="icg_cap_addate" Type="DateTime" />
+          <Property Name="icg_cap_UpdateDT" Type="DateTime" />
+          <NavigationProperty Name="icg_marketing_data_supplement" Relationship="rlworldwideModel.FK_icg_marketing_data_supplement_icg_marketing_data" FromRole="icg_marketing_data" ToRole="icg_marketing_data_supplement" />
+        </EntityType>
+        <EntityType Name="icg_marketing_data_sitenum">
+          <Key>
+            <PropertyRef Name="icg_cap_num_id" />
+          </Key>
+          <Property Name="icg_cap_num_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_number" Type="Int32" Nullable="false" />
+          <Property Name="icg_cap_site" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="icg_marketing_data_supplement">
+          <Key>
+            <PropertyRef Name="icg_cap_Supplement_id" />
+          </Key>
+          <Property Name="icg_cap_Supplement_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icg_cap_id" Type="Int32" Nullable="false" />
+          <Property Name="icg_cap_RegisterforNews" Type="Boolean" Nullable="false" />
+          <Property Name="icg_cap_Current_RL_customer" Type="Boolean" Nullable="false" />
+          <Property Name="icg_cap_RL_Store" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="icg_cap_Subject" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="icg_cap_Message" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="icg_cap_HeardAboutUs" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="icg_marketing_data" Relationship="rlworldwideModel.FK_icg_marketing_data_supplement_icg_marketing_data" FromRole="icg_marketing_data_supplement" ToRole="icg_marketing_data" />
+        </EntityType>
+        <Association Name="FK_icg_marketing_data_supplement_icg_marketing_data">
+          <End Role="icg_marketing_data" Type="rlworldwideModel.icg_marketing_data" Multiplicity="1" />
+          <End Role="icg_marketing_data_supplement" Type="rlworldwideModel.icg_marketing_data_supplement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="icg_marketing_data">
+              <PropertyRef Name="icg_cap_id" />
+            </Principal>
+            <Dependent Role="icg_marketing_data_supplement">
+              <PropertyRef Name="icg_cap_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="rlworldwideModelStoreContainer" CdmEntityContainer="rlworldwideEntities1">
+          <EntitySetMapping Name="icg_marketing_data"><EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data"><MappingFragment StoreEntitySet="icg_marketing_data">
+            <ScalarProperty Name="icg_cap_id" ColumnName="icg_cap_id" />
+            <ScalarProperty Name="icg_cap_site" ColumnName="icg_cap_site" />
+            <ScalarProperty Name="icg_cap_email" ColumnName="icg_cap_email" />
+            <ScalarProperty Name="icg_cap_prefix" ColumnName="icg_cap_prefix" />
+            <ScalarProperty Name="icg_cap_fname" ColumnName="icg_cap_fname" />
+            <ScalarProperty Name="icg_cap_lname" ColumnName="icg_cap_lname" />
+            <ScalarProperty Name="icg_cap_address1" ColumnName="icg_cap_address1" />
+            <ScalarProperty Name="icg_cap_address2" ColumnName="icg_cap_address2" />
+            <ScalarProperty Name="icg_cap_address3" ColumnName="icg_cap_address3" />
+            <ScalarProperty Name="icg_cap_city" ColumnName="icg_cap_city" />
+            <ScalarProperty Name="icg_cap_state" ColumnName="icg_cap_state" />
+            <ScalarProperty Name="icg_cap_province" ColumnName="icg_cap_province" />
+            <ScalarProperty Name="icg_cap_zip" ColumnName="icg_cap_zip" />
+            <ScalarProperty Name="icg_cap_country" ColumnName="icg_cap_country" />
+            <ScalarProperty Name="icg_cap_mphone" ColumnName="icg_cap_mphone" />
+            <ScalarProperty Name="icg_cap_hphone" ColumnName="icg_cap_hphone" />
+            <ScalarProperty Name="icg_cap_ccode" ColumnName="icg_cap_ccode" />
+            <ScalarProperty Name="icg_cap_age" ColumnName="icg_cap_age" />
+            <ScalarProperty Name="icg_cap_gender" ColumnName="icg_cap_gender" />
+            <ScalarProperty Name="icg_cap_optdot" ColumnName="icg_cap_optdot" />
+            <ScalarProperty Name="icg_cap_opthome" ColumnName="icg_cap_opthome" />
+            <ScalarProperty Name="icg_cap_optrun" ColumnName="icg_cap_optrun" />
+            <ScalarProperty Name="icg_cap_optrlg" ColumnName="icg_cap_optrlg" />
+            <ScalarProperty Name="icg_cap_optrgb" ColumnName="icg_cap_optrgb" />
+            <ScalarProperty Name="icg_cap_shopdot" ColumnName="icg_cap_shopdot" />
+            <ScalarProperty Name="icg_cap_shopprl" ColumnName="icg_cap_shopprl" />
+            <ScalarProperty Name="icg_cap_shopfoa" ColumnName="icg_cap_shopfoa" />
+            <ScalarProperty Name="icg_cap_shopdept" ColumnName="icg_cap_shopdept" />
+            <ScalarProperty Name="icg_cap_opt_prodesigner" ColumnName="icg_cap_opt_prodesigner" />
+            <ScalarProperty Name="icg_cap_opt_procontractor" ColumnName="icg_cap_opt_procontractor" />
+            <ScalarProperty Name="icg_cap_hhear" ColumnName="icg_cap_hhear" />
+            <ScalarProperty Name="icg_cap_sms_sent" ColumnName="icg_cap_sms_sent" />
+            <ScalarProperty Name="icg_cap_addate" ColumnName="icg_cap_addate" />
+            <ScalarProperty Name="icg_cap_UpdateDT" ColumnName="icg_cap_UpdateDT" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="icg_marketing_data_sitenum"><EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data_sitenum"><MappingFragment StoreEntitySet="icg_marketing_data_sitenum">
+            <ScalarProperty Name="icg_cap_num_id" ColumnName="icg_cap_num_id" />
+            <ScalarProperty Name="icg_cap_number" ColumnName="icg_cap_number" />
+            <ScalarProperty Name="icg_cap_site" ColumnName="icg_cap_site" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="icg_marketing_data_supplement"><EntityTypeMapping TypeName="rlworldwideModel.icg_marketing_data_supplement"><MappingFragment StoreEntitySet="icg_marketing_data_supplement">
+            <ScalarProperty Name="icg_cap_Supplement_id" ColumnName="icg_cap_Supplement_id" />
+            <ScalarProperty Name="icg_cap_id" ColumnName="icg_cap_id" />
+            <ScalarProperty Name="icg_cap_RegisterforNews" ColumnName="icg_cap_RegisterforNews" />
+            <ScalarProperty Name="icg_cap_Current_RL_customer" ColumnName="icg_cap_Current_RL_customer" />
+            <ScalarProperty Name="icg_cap_RL_Store" ColumnName="icg_cap_RL_Store" />
+            <ScalarProperty Name="icg_cap_Subject" ColumnName="icg_cap_Subject" />
+            <ScalarProperty Name="icg_cap_Message" ColumnName="icg_cap_Message" />
+            <ScalarProperty Name="icg_cap_HeardAboutUs" ColumnName="icg_cap_HeardAboutUs" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_SaveMarketingCapture" FunctionName="rlworldwideModel.Store.usp_SaveMarketingCapture" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="rlworldwide" ZoomLevel="72">
+        <EntityTypeShape EntityType="rlworldwideModel.icg_marketing_data" Width="1.5" PointX="0.75" PointY="1.25" Height="7.7493294270833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="rlworldwideModel.icg_marketing_data_sitenum" Width="1.5" PointX="2.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="rlworldwideModel.icg_marketing_data_supplement" Width="1.5" PointX="3" PointY="3.75" Height="2.7494921874999996" IsExpanded="true" />
+        <AssociationConnector Association="rlworldwideModel.FK_icg_marketing_data_supplement_icg_marketing_data" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.12474609375" />
+          <ConnectorPoint PointX="3" PointY="5.12474609375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
